@@ -10,8 +10,10 @@
 angular.module('tubeview2App')
   .controller('MainCtrl', function ($scope, $alert, youtubeAPI) {
 
-    youtubeAPI.findVideo('test').then(function(data) {
-
+    youtubeAPI.findVideos({query: 'jayz'}).then(function(data) {
+      youtubeAPI.nextPage().then(function(data){
+        debugger;
+      });
     }).catch(function(resp) {
       $alert({
         title: 'Error',
