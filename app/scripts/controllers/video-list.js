@@ -2,13 +2,25 @@
 
 /**
  * @ngdoc function
- * @name tubeview2App.controller:MainCtrl
+ * @name tubeview2App.controller:VideoListCtrl
  * @description
- * # MainCtrl
+ * # VideoListCtrl
  * Controller of the tubeview2App
  */
 angular.module('tubeview2App')
-  .controller('MainCtrl', function ($scope, $alert, youtubeAPI) {
+
+  .config(function ($routeProvider) {
+    $routeProvider
+      .when('/', {
+        templateUrl: 'views/video-list.html',
+        controller: 'VideoListCtrl',
+        resolve: {
+          //
+        }
+      })
+  })
+
+  .controller('VideoListCtrl', function ($scope, $alert, youtubeAPI) {
 
     youtubeAPI.findVideos({query: 'jayz'}).then(function(data) {
       youtubeAPI.nextPage().then(function(data){
