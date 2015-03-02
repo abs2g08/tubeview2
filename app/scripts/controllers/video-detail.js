@@ -17,13 +17,13 @@ angular.module('tubeview2App')
         controller: 'VideoDetailCtrl',
         resolve: {
           videoData: function($route, youtubeAPI) {
-            debugger;
-            youtubeAPI.getVideo({query: $route.current.params.video_id});
+            return youtubeAPI.getVideo($route.current.params.video_id);
           }
         }
       })
   })
 
   .controller('VideoDetailCtrl', function ($scope, videoData) {
+    //$scope.videoData = videoData.data;
     debugger;
   });

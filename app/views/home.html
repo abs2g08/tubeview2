@@ -1,0 +1,26 @@
+<form class="search-bar">
+   <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="query" ng-enter="findVideos()">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click="findVideos()">Search</button>
+      </span>
+    </div>
+</form>
+
+<tabset class="tabs" justified="true">
+  <tab ng-repeat="tab in tabs" heading="{{tab.query}}" active="tab.active">
+    <div class="video-list">
+      <ul >
+        <li ng-repeat="video in videoList">
+          <div class="id">
+            {{video.id}}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </tab>
+</tabset>
+
+<div class="tabs-footer">
+  <button type="button" class="btn btn-default" ng-hide="tabs.length === 0" ng-click="deleteTab()">Delete tab</button>
+</div>
