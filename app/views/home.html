@@ -1,19 +1,19 @@
-<form class="search-bar">
+<form class="search-bar" ng-controller="SearchCtrl">
    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for..." ng-model="query" ng-enter="findVideos()">
+      <input type="text" class="form-control" placeholder="Search for..." ng-model="query" ng-enter="search()">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="findVideos()">Search</button>
+        <button class="btn btn-default" type="button" ng-click="search()">Search</button>
       </span>
     </div>
 </form>
 
-<tabset class="tabs" justified="true">
-  <tab ng-repeat="tab in tabs" heading="{{tab.query}}" active="tab.active">
+<tabset class="tabs" justified="true" ng-controller="TabsCtrl">
+  <tab ng-repeat="tab in tabs" heading="{{tab.result.query}}" active="tab.active">
     <div class="video-list">
       <ul >
-        <li ng-repeat="video in videoList">
+        <li ng-repeat="video in tab.result.videos">
           <div class="id">
-            {{video.id}}
+            {{video.id.videoId}}
           </div>
         </li>
       </ul>

@@ -9,27 +9,29 @@
  */
 angular.module('tubeview2App')
   .factory('youtubeManager', function (Youtube, $q) {
-    var _nextPageToken, _prevPageToken, _currentQuery = '';
 
     var originalSearch = Youtube.search;
 
     Youtube['search'] = function(options) {
       return originalSearch(options).then(function(data) {
-        _nextPageToken = data.nextPageToken;
-        _prevPageToken = data.prevPageToken || '';
+
+        var nextPageToken = data.nextPageToken;
+        var prevPageToken = data.prevPageToken || '';
+
         return {
+          query: options.q,
           videos: data.items,
           totalResults: data.pageInfo,
-          searchOpts: options,
           nextPage: function() {
-            options.pageToken = _nextPageToken;
+            options.pageToken = nextPageToken;
             return Youtube.search(options);
           },
           prevPage: function() {
-            options.pageToken = _prevPageToken;
+            options.pageToken = prevPageToken;
             return Youtube.search(options);
           }
         }
+
       });
     }
     return Youtube;

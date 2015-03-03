@@ -22,26 +22,15 @@ angular.module('tubeview2App')
       })
   })
 
-  .controller('HomeCtrl', function ($scope, $alert, youtubeManager) {
+  .controller('HomeCtrl', function ($scope, $alert) {
 
-    debugger;
-
-    $scope.videos = youtubeManager.search({ part: 'snippet', q: 'Search terms' }).then(function(results){
-      results.nextPage().then(function(nextPageResults) {
-        debugger;
-      });
-    });
-
-//      debugger;
-    // }).catch(function(resp) {
-    //    $alert({
-    //       title: 'Error',
-    //       content: 'There was an error finding videos: '+resp.data.error.message,
-    //       placement: 'top',
-    //       duration: 3,
-    //       type: 'danger',
-    //       show: true
-    //     });
+    // var search = function(query) {
+    //   youtubeManager.search({ part: 'snippet', q: query }).then(function(resultsObj) {
+    //     createNewTab(resultsObj);
+    //     // results.nextPage().then(function(nextPageResults) {
+    //     //   debugger;
+    //     // });
     //   });
+    // }
 
   });
