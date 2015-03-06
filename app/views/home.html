@@ -11,14 +11,16 @@
   <tab ng-repeat="tab in tabs" heading="{{tab.result.query}}" active="tab.active">
     <div class="video-list">
       <ul >
-        <li ng-repeat="video in tab.result.videos">
+        <li class="video-item" ng-repeat="video in tab.result.videos">
           <div class="id">
             {{video.id.videoId}}
           </div>
         </li>
       </ul>
     </div>
+    <div ng-hide="tabs.length">No videoes found</div>
   </tab>
+  <pagination total-items="tab.result.pageInfo.totalResults" ng-model="pagiation.currentPage" ng-change="pagiation.pageChanged()"></pagination>
 </tabset>
 
 <div class="tabs-footer">

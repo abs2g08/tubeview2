@@ -10,36 +10,85 @@
 angular.module('tubeview2App')
   .factory('paginationManager', function () {
 
-    return {
+    var PaginationManager = function(options) {
+
+      var defaults {
+        currentPage: 1,
+        pageLength: 10,
+        totalItems: 100,
+        data: null,
+        ajax: null,
+        loader: {
+          start: function(){},
+          stop: function(){},
+        }
+        paginatedList: []
+      }
+
+      if(options.data) {
+        options.paginatedList = this.paginate(options.data);
+      }
+
+      this.options = $.extend({}, defaults, options);
+    }
+
+    PaginationManager.prototype = {
+
+      getPage: function(number, callback) {
+        this.currentPage = number;
+        var page = null;
+
+        if(this.currentPage < this.options.paginatedList.length) {
+          callback(this.options.paginatedList[(this.currentPage-1)]);
+        } else {
+          var _this = this;
+          _this.options.loader.start();
+          _this.options.ajax(function(data) {
+            _this.options.loader.stop();
+            _this.paginateList.push(data);
+            callback(data);
+          });
+        }
+      },
+
+      paginate: function(list) {
+        var pagedList = [], i, len;
+
+        if(list.length >= this.options.pageLength) {
+          for (i = 0, len = list.length; i < len; i += this.options.pageLength) {
+            pagedList.push(list.slice(i, i + this.options.pageLength));
+          }
+        } else {
+          pagedList.push(list);
+        }
+        return pagedList;
+      }
 
     }
 
-        // var getPagedList = function(fullList) {
-        //   var pagedList = [], i, len;
+    return PaginationManager;
 
-        //   if(fullList.length >= 10) {
-        //     for (i = 0, len = fullList.length; i < len; i += 10) {
-        //       pagedList.push(fullList.slice(i, i + 10));
-        //     }
-        //   } else {
-        //     pagedList.push(fullList);
-        //   }
-        //   return pagedList;
-        // };
+    // var pagination = {
+    //   currentPage: 1,
+    //   total: 10,
+    //   dataSource: null,
+    //   getPage: function(pageNo, rawList) {
+    //     this.currentPage = pageNo;
+    //     return this.paginateList(rawList)[(this.currentPage-1)];
+    //   },
+    //   paginateList: function(rawList) {
+    //     var pagedList = [], i, len;
 
-        // $scope.totalItems = $scope.tab.results.length;
-        // $scope.currentPage = 1;
-        // $scope.tab.pagedResult = getPagedList($scope.tab.results)[0];
+    //     if(fullList.length >= this.pageLength) {
+    //       for (i = 0, len = rawList.length; i < len; i += this.pageLength) {
+    //         pagedList.push(rawList.slice(i, i + this.pageLength));
+    //       }
+    //     } else {
+    //       pagedList.push(rawList);
+    //     }
+    //     return pagedList;
+    //   }
+    // }
 
-        // $scope.setPage = function (pageNo) {
-        //   $scope.currentPage = pageNo;
-        // };
-
-        // $scope.pageChanged = function() {
-        //   $scope.tab.pagedResult = getPagedList($scope.tab.results)[($scope.currentPage-1)];
-        // };
-
-        // $scope.bigTotalItems = 175;
-        // $scope.bigCurrentPage = 1;
-
+    // return pagination;
   });
