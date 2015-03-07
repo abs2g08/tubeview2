@@ -8,15 +8,15 @@
  * Factory in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('resultsManager', function (tabManager, paginationManager) {
+  .factory('resultsManager', function (tabManager, PaginationManager) {
 
     // Public API here
     return {
       pushResult: function(resultsObj) {
 
-        var pagination = new paginationManager({
-            pageLength: resultsObj.videos.length,
-            totalItems: resultsObj.totalItems,
+        var pagination = new PaginationManager({
+            pageLength: resultsObj.totalResults.resultsPerPage,
+            totalItems: resultsObj.totalResults.totalResults,
             data: resultsObj.videos,
             ajax: function(callback) {
               resultsObj.nextPage().then(function(data) {

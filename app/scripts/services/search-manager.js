@@ -15,7 +15,7 @@ angular.module('tubeview2App')
       search: function() {
         youtubeManager.search({ part: 'snippet', q: this.query })
           .then(function(resultsObj) {
-            resultsManager.pushResult(resultsObj});
+            resultsManager.pushResult(resultsObj);
           });
       }
     }

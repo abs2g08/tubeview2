@@ -8,6 +8,6 @@
  * Controller of the tubeview2App
  */
 angular.module('tubeview2App')
-  .controller('TabsCtrl', function ($scope, tabManager, paginationManager) {
+  .controller('TabsCtrl', function ($scope, tabManager, PaginationManager) {
     angular.extend($scope, tabManager);
   });

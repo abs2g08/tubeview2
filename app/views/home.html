@@ -9,9 +9,9 @@
 
 <tabset class="tabs" justified="true" ng-controller="TabsCtrl">
   <tab ng-repeat="tab in tabs" heading="{{tab.result.query}}" active="tab.active">
-    <div class="video-list" ng-controller="ResultsCrl">
+    <div class="video-list" ng-controller="ResultsCtrl">
       <ul >
-        <li class="video-item" ng-repeat="video in tab.result.pagiation.options.currentPage">
+        <li class="video-item" ng-repeat="video in tab.pagination.options.currentPage">
           <div class="id">
             {{video.id.videoId}}
           </div>

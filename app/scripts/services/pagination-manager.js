@@ -8,7 +8,7 @@
  * Service in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('paginationManager', function () {
+  .factory('PaginationManager', function () {
 
     var PaginationManager = function(options) {
 
@@ -22,15 +22,13 @@ angular.module('tubeview2App')
         loader: {
           start: function(){},
           stop: function(){},
-        }
+        },
         paginatedList: []
       }
 
-      if(options.data) {
-        options.paginatedList = this.paginate(options.data);
-      }
-
       this.options = $.extend({}, defaults, options);
+      this.options.paginatedList = this.paginate(this.options.data, this.options.pageLength);
+      this.options.currentPage = this.options.paginatedList[this.options.currentPageNum-1];
     }
 
     PaginationManager.prototype = {
@@ -49,12 +47,12 @@ angular.module('tubeview2App')
         }
       },
 
-      paginate: function(list) {
+      paginate: function(list, pageLength) {
         var pagedList = [], i, len;
 
-        if(list.length >= this.options.pageLength) {
-          for (i = 0, len = list.length; i < len; i += this.options.pageLength) {
-            pagedList.push(list.slice(i, i + this.options.pageLength));
+        if(list.length >= pageLength) {
+          for (i = 0, len = list.length; i < len; i += pageLength) {
+            pagedList.push(list.slice(i, i + pageLength));
           }
         } else {
           pagedList.push(list);
