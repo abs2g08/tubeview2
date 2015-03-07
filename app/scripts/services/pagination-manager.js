@@ -12,8 +12,9 @@ angular.module('tubeview2App')
 
     var PaginationManager = function(options) {
 
-      var defaults {
-        currentPage: 1,
+      var defaults = {
+        currentPageNum: 1,
+        currentPage: null,
         pageLength: 10,
         totalItems: 100,
         data: null,
@@ -34,10 +35,7 @@ angular.module('tubeview2App')
 
     PaginationManager.prototype = {
 
-      getPage: function(number, callback) {
-        this.currentPage = number;
-        var page = null;
-
+      pageChanged: function() {
         if(this.currentPage < this.options.paginatedList.length) {
           callback(this.options.paginatedList[(this.currentPage-1)]);
         } else {
@@ -68,27 +66,4 @@ angular.module('tubeview2App')
 
     return PaginationManager;
 
-    // var pagination = {
-    //   currentPage: 1,
-    //   total: 10,
-    //   dataSource: null,
-    //   getPage: function(pageNo, rawList) {
-    //     this.currentPage = pageNo;
-    //     return this.paginateList(rawList)[(this.currentPage-1)];
-    //   },
-    //   paginateList: function(rawList) {
-    //     var pagedList = [], i, len;
-
-    //     if(fullList.length >= this.pageLength) {
-    //       for (i = 0, len = rawList.length; i < len; i += this.pageLength) {
-    //         pagedList.push(rawList.slice(i, i + this.pageLength));
-    //       }
-    //     } else {
-    //       pagedList.push(rawList);
-    //     }
-    //     return pagedList;
-    //   }
-    // }
-
-    // return pagination;
   });

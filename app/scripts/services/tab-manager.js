@@ -10,8 +10,6 @@
 angular.module('tubeview2App')
   .factory('tabManager', function (paginationManager) {
 
-
-
     return {
       tabs: [],
       deleteTab: function() {
@@ -21,11 +19,8 @@ angular.module('tubeview2App')
           }
         }
       },
-      createTab: function(resultsObj) {
-        this.tabs.push({
-          result: resultsObj,
-          active: true,
-        });
+      createTab: function(page) {
+        this.tabs.push(page);
       }
     }
   });

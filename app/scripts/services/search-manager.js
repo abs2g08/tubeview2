@@ -8,14 +8,14 @@
  * Service in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('searchManager', function (youtubeManager, tabManager) {
+  .factory('searchManager', function (youtubeManager, resultsManager) {
     var search = {
       query: '',
 
       search: function() {
         youtubeManager.search({ part: 'snippet', q: this.query })
           .then(function(resultsObj) {
-            tabManager.createTab(resultsObj);
+            resultsManager.pushResult(resultsObj});
           });
       }
     }

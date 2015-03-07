@@ -8,7 +8,7 @@
  * Controller of the tubeview2App
  */
 angular.module('tubeview2App')
-  .controller('MainCtrl', function ($scope, $alert) {
+  .controller('MainCtrl', function () {
 
     // youtubeAPI.findVideos({query: 'jayz'}).then(function(data) {
     //   youtubeAPI.nextPage().then(function(data){
