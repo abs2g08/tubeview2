@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'mgcrea.ngStrap',
+    'ui.bootstrap',
     'gapi'
   ])
   .config(function ($routeProvider) {

@@ -7,20 +7,40 @@
     </div>
 </form>
 
-<tabset class="tabs" justified="true" ng-controller="TabsCtrl">
-  <tab ng-repeat="tab in tabs" heading="{{tab.result.query}}" active="tab.active">
-    <div class="video-list" ng-controller="ResultsCtrl">
-      <ul >
-        <li class="video-item" ng-repeat="video in tab.pagination.options.currentPage">
-          <div class="id">
-            {{video.id.videoId}}
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div ng-hide="tabs.length">No videoes found</div>
+<div ng-controller="TabsCtrl">
+  <tabset justified="true">
+    <tab ng-repeat="tab in tabs" heading="test" active="tab.active">
+      <div class="video-list">
+        <ul>
+          <li class="video-item" ng-repeat="video in tab.pagination.options.currentPage">
+            <div class="id">
+              {{video.id.videoId}}
+            </div>
+          </li>
+        </ul>
+        <div>
+          {{tab.pagination.options.totalItems}}
+          {{$index}}
+          {{tabs[$index].pagination.options.totalItems}}
+        </div>
+        <div>
+          {{tab.pagination.options.currentPageNum}}
+        </div>
+        <pagination boundary-links="true" total-items="tabs[$index].pagination.options.totalItems" ng-model="test.currentPageNum" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"></pagination>
+        <pagination total-items="tab.pagination.options.totalItems" ng-model="tab.pagination.options.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
+      </div>
+      <div ng-hide="tabs.length">No videoes found</div>
+    </tab>
+  </tabset>
+</div>
+
+<tabset>
+  <tab heading="test">
+    hello world
   </tab>
-  <pagination total-items="tab.result.pagination.options.totalResults" ng-model="tab.result.pagiation.options.currentPageNum" ng-change="tab.result.pagination.pageChanged()"></pagination>
+  <tab heading="me">
+    test me
+  </tab>
 </tabset>
 
 <div class="tabs-footer">

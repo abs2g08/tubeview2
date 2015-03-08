@@ -20,6 +20,7 @@ angular.module('tubeview2App')
         }
       },
       createTab: function(page) {
+        page.active = true;
         this.tabs.push(page);
       }
     }

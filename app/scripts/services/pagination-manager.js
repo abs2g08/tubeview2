@@ -16,7 +16,7 @@ angular.module('tubeview2App')
         currentPageNum: 1,
         currentPage: null,
         pageLength: 10,
-        totalItems: 100,
+        totalItems: 10,
         data: null,
         ajax: null,
         loader: {

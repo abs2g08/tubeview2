@@ -16,7 +16,7 @@ angular.module('tubeview2App')
 
         var pagination = new PaginationManager({
             pageLength: resultsObj.totalResults.resultsPerPage,
-            totalItems: resultsObj.totalResults.totalResults,
+            //totalItems: resultsObj.totalResults.totalResults,
             data: resultsObj.videos,
             ajax: function(callback) {
               resultsObj.nextPage().then(function(data) {
