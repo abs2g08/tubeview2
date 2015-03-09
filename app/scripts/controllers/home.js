@@ -24,7 +24,7 @@ angular.module('tubeview2App')
       })
   })
 
-  .controller('HomeCtrl', function ($scope, GAPI, $alert, $window) {
+  .controller('HomeCtrl', function ($scope, $alert) {
 
     // $window.initGapi = function() {
     //   return GAPI.init();

@@ -15,7 +15,7 @@ angular.module('tubeview2App')
       var defaults = {
         currentPageNum: 1,
         currentPage: null,
-        pageLength: 10,
+        pageLength: 5,
         totalItems: 20,
         data: null,
         ajax: null,
@@ -34,17 +34,23 @@ angular.module('tubeview2App')
     PaginationManager.prototype = {
 
       pageChanged: function() {
-        if(this.currentPage < this.options.paginatedList.length) {
-          callback(this.options.paginatedList[(this.currentPage-1)]);
+        debugger;
+        var pageIndex = this.options.currentPageNum;
+        if(pageIndex <= this.options.paginatedList.length) {
+          this.options.currentPage = this.options.paginatedList[pageNum];
         } else {
           var _this = this;
           _this.options.loader.start();
           _this.options.ajax(function(data) {
             _this.options.loader.stop();
-            _this.paginateList.push(data);
-            callback(data);
+            _this.options.paginatedList.push(data.videos);
+            _this.options.currentPage = _this.options.paginatedList[_this.options.currentPageNum-1];
           });
         }
+      },
+
+      addPage: function(data) {
+        //TO-DO: we need this incase we are doing caching
       },
 
       paginate: function(list, pageLength) {
@@ -59,7 +65,6 @@ angular.module('tubeview2App')
         }
         return pagedList;
       }
-
     }
 
     return PaginationManager;
