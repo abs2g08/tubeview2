@@ -23,7 +23,7 @@
       <div>
         {{tabs[0].pagination.options.totalItems}}
       </div>
-      <pagination total-items="tab.pagination.options.totalItems" ng-model="tab.pagination.options.currentPageNum" ng-change="pageChanged()"></pagination>
+      <pagination total-items="tab.pagination.options.totalItems" ng-model="tab.pagination.options.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
     </tab>
   </tabset>
 </div>
