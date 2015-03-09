@@ -18,8 +18,10 @@ angular.module('tubeview2App')
             //totalItems: resultsObj.totalResults.totalResults,
             data: resultsObj.videos,
             ajax: function(callback) {
-              resultsObj.nextPage().then(function(data) {
-                callback(data);
+              var _this = this;
+              resultsObj.nextPage().then(function(resultsObj) {
+                // _this.resultsObj = resultsObj;
+                callback(resultsObj);
               });
             }
         });

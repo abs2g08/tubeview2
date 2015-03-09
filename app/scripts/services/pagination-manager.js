@@ -34,17 +34,16 @@ angular.module('tubeview2App')
     PaginationManager.prototype = {
 
       pageChanged: function() {
-        debugger;
-        var pageIndex = this.options.currentPageNum;
-        if(pageIndex <= this.options.paginatedList.length) {
-          this.options.currentPage = this.options.paginatedList[pageNum];
+        var pageIndex = (this.options.currentPageNum-1);
+        if(this.options.currentPageNum <= this.options.paginatedList.length) {
+          this.options.currentPage = this.options.paginatedList[pageIndex];
         } else {
           var _this = this;
           _this.options.loader.start();
           _this.options.ajax(function(data) {
             _this.options.loader.stop();
             _this.options.paginatedList.push(data.videos);
-            _this.options.currentPage = _this.options.paginatedList[_this.options.currentPageNum-1];
+            _this.options.currentPage = _this.options.paginatedList[pageIndex];
           });
         }
       },
@@ -65,6 +64,7 @@ angular.module('tubeview2App')
         }
         return pagedList;
       }
+
     }
 
     return PaginationManager;

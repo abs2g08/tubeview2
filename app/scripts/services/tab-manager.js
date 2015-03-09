@@ -12,10 +12,6 @@ angular.module('tubeview2App')
 
     return {
       tabs: [],
-      // tab: {
-      //   totalItems: 64,
-      //   currentPage: 4,
-      // },
       deleteTab: function() {
         for(var i=0; i<this.tabs.length; i++) {
           if(this.tabs[i].active === true) {

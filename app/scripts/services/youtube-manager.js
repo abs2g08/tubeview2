@@ -24,6 +24,8 @@ angular.module('tubeview2App')
           totalResults: data.pageInfo,
           nextPage: function() {
             options.pageToken = nextPageToken;
+
+            //replace with original search
             return Youtube.search(options);
           },
           prevPage: function() {
