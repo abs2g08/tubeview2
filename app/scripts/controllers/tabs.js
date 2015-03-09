@@ -9,15 +9,20 @@
  */
 angular.module('tubeview2App')
   .controller('TabsCtrl', function ($scope, tabManager, PaginationManager) {
-    $scope.test = {
-      totalItems: 64,
-      currentPageNum: 1,
+    angular.extend($scope, tabManager);
+
+    $scope.totalItems = 64;
+    $scope.currentPage = 4;
+
+    $scope.setPage = function (pageNo) {
+      $scope.currentPage = pageNo;
     };
-    // $scope.totalItems = 64;
-    // $scope.currentPageNum = 1;
+
+    $scope.pageChanged = function() {
+      $log.log('Page changed to: ' + $scope.currentPage);
+    };
 
     $scope.maxSize = 5;
     $scope.bigTotalItems = 175;
     $scope.bigCurrentPage = 1;
-    angular.extend($scope, tabManager);
   });

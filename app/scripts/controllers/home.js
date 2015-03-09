@@ -23,14 +23,18 @@ angular.module('tubeview2App')
   })
 
   .controller('HomeCtrl', function ($scope, $alert) {
+    $scope.totalItems = 64;
+    $scope.currentPage = 4;
 
-    // var search = function(query) {
-    //   youtubeManager.search({ part: 'snippet', q: query }).then(function(resultsObj) {
-    //     createNewTab(resultsObj);
-    //     // results.nextPage().then(function(nextPageResults) {
-    //     //   debugger;
-    //     // });
-    //   });
-    // }
+    $scope.setPage = function (pageNo) {
+      $scope.currentPage = pageNo;
+    };
 
+    $scope.pageChanged = function() {
+      $log.log('Page changed to: ' + $scope.currentPage);
+    };
+
+    $scope.maxSize = 5;
+    $scope.bigTotalItems = 175;
+    $scope.bigCurrentPage = 1;
   });
