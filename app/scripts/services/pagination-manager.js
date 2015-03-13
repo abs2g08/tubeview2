@@ -40,9 +40,9 @@ angular.module('tubeview2App')
         } else {
           var _this = this;
           _this.options.loader.start();
-          _this.options.ajax(function(data) {
+          _this.options.ajax(_this.options.currentPageNum, function(data) {
             _this.options.loader.stop();
-            _this.options.paginatedList.push(data.videos);
+            _this.options.paginatedList.push(data.items);
             _this.options.currentPage = _this.options.paginatedList[pageIndex];
           });
         }

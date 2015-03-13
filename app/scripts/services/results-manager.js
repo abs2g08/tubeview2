@@ -17,10 +17,9 @@ angular.module('tubeview2App')
             pageLength: resultsObj.totalResults.resultsPerPage,
             //totalItems: resultsObj.totalResults.totalResults,
             data: resultsObj.videos,
-            ajax: function(callback) {
+            ajax: function(index, callback) {
               var _this = this;
               resultsObj.nextPage().then(function(resultsObj) {
-                // _this.resultsObj = resultsObj;
                 callback(resultsObj);
               });
             }

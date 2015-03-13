@@ -13,8 +13,11 @@ angular.module('tubeview2App')
       query: '',
 
       search: function() {
-        youtubeManager.search({ part: 'snippet', q: this.query })
-          .then(function(resultsObj) {
+        youtubeManager.search({
+            part: 'snippet',
+            q: this.query,
+            'max-results': 10,
+          }).then(function(resultsObj) {
             resultsManager.pushResult(resultsObj);
           });
       }
