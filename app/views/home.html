@@ -12,7 +12,7 @@
     <tab ng-repeat="tab in tabs" heading="test" active="tab.active">
       <div class="video-list">
         <ul>
-          <li class="video-item" ng-repeat="video in tab.pagination.options.currentPage">
+          <li class="video-item" ng-repeat="video in tab.pagination.currentPage">
             <div class="id">
               {{video.id.videoId}}
             </div>
@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div ng-hide="tabs.length">No videoes found</div>
-      <pagination total-items="tab.pagination.options.totalItems" items-per-page="tab.pagination.options.pageLength" ng-model="tab.pagination.options.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
+      <pagination total-items="tab.pagination.totalItems" items-per-page="tab.pagination.pageLength" ng-model="tab.pagination.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
     </tab>
   </tabset>
 </div>

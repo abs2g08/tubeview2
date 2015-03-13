@@ -10,40 +10,39 @@
 angular.module('tubeview2App')
   .factory('PaginationManager', function () {
 
+    var defaults = {
+      currentPageNum: 1,
+      currentPage: null,
+      pageLength: 5,
+      totalItems: 20,
+      data: null,
+      ajax: null,
+      loader: {
+        start: function(){},
+        stop: function(){},
+      },
+      paginatedList: []
+    }
+
     var PaginationManager = function(options) {
-
-      var defaults = {
-        currentPageNum: 1,
-        currentPage: null,
-        pageLength: 5,
-        totalItems: 20,
-        data: null,
-        ajax: null,
-        loader: {
-          start: function(){},
-          stop: function(){},
-        },
-        paginatedList: []
-      }
-
-      this.options = $.extend({}, defaults, options);
-      this.options.paginatedList = this.paginate(this.options.data, this.options.pageLength);
-      this.options.currentPage = this.options.paginatedList[this.options.currentPageNum-1];
+      angular.extend(this, defaults, options);
+      this.paginatedList = this.paginate(this.data, this.pageLength);
+      this.currentPage = this.paginatedList[this.currentPageNum-1];
     }
 
     PaginationManager.prototype = {
 
       pageChanged: function() {
-        var pageIndex = (this.options.currentPageNum-1);
-        if(this.options.currentPageNum <= this.options.paginatedList.length) {
-          this.options.currentPage = this.options.paginatedList[pageIndex];
+        var pageIndex = (this.currentPageNum-1);
+        if(this.currentPageNum <= this.paginatedList.length) {
+          this.currentPage = this.paginatedList[pageIndex];
         } else {
           var _this = this;
-          _this.options.loader.start();
-          _this.options.ajax(_this.options.currentPageNum, function(data) {
-            _this.options.loader.stop();
-            _this.options.paginatedList.push(data.items);
-            _this.options.currentPage = _this.options.paginatedList[pageIndex];
+          _this.loader.start();
+          _this.ajax(_this.currentPageNum, function(data) {
+            _this.loader.stop();
+            _this.paginatedList.push(data.items);
+            _this.currentPage = _this.paginatedList[pageIndex];
           });
         }
       },

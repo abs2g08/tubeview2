@@ -11,12 +11,10 @@ angular.module('tubeview2App')
   .factory('searchManager', function (youtubeManager, resultsManager) {
     var search = {
       query: '',
-
       search: function() {
-        youtubeManager.search({
-            part: 'snippet',
+        youtubeManager
+          .search({
             q: this.query,
-            'max-results': 10,
           }).then(function(resultsObj) {
             resultsManager.pushResult(resultsObj);
           });
