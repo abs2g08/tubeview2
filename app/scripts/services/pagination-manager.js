@@ -15,8 +15,8 @@ angular.module('tubeview2App')
       currentPage: null,
       prevPageNum: 1,
       pageLength: 5,
-      totalItems: 20,
-      maxPageReached: 0,
+      totalItems: 50,
+      maxPageReached: 1,
       data: null,
       ajax: null,
       loader: {
@@ -36,33 +36,33 @@ angular.module('tubeview2App')
 
       updateIndexes: function(pageIndex) {
         this.currentPage = this.paginatedList[pageIndex];
-        this.prevPageNum = this.currentPage;
-        if(this.currentPage > this.maxPageReached) {
-          this.maxPageReached = this.currentPage;
+        this.prevPageNum = this.currentPageNum;
+        if(this.currentPageNum > this.maxPageReached) {
+          this.maxPageReached = this.currentPageNum;
         }
-      }
+      },
 
       pageChanged: function() {
         var pageIndex = (this.currentPageNum-1);
         if(this.currentPageNum <= this.paginatedList.length) {
-          this.updateIndexes();
+          this.updateIndexes(pageIndex);
         } else {
           var _this = this;
           _this.loader.start();
           _this.ajax(_this, function(items) {
             _this.loader.stop();
             _this.pushPage(items);
-            _this.updateIndexes();
+            _this.updateIndexes(pageIndex);
           });
         }
       },
 
       pushPage: function(items) {
-        if(items.length === this.pageLength.length) {
-          this.paginatedList.push(data);
+        if(items.length === this.pageLength) {
+          this.paginatedList.push(items);
         } else {
-          var newPagedList = this.paginate(items);
-          this.paginatedList = concat(this.paginatedList, newPagedList);
+          var newPagedList = this.paginate(items, this.pageLength);
+          this.paginatedList = this.paginatedList.concat(newPagedList);
         }
       },
 

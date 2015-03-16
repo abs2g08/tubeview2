@@ -14,7 +14,7 @@ angular.module('tubeview2App')
 
     var Result = function(queryParams, data) {
       this.queryParams = queryParams;
-      this.currentPage = 1;
+      this.currentPageNum = 1;
 
       angular.extend(this, data);
     }
@@ -24,9 +24,9 @@ angular.module('tubeview2App')
         this.queryParams.pageToken = this.nextPageToken;
 
         var _this = this;
-        Youtube.search(this.queryParams).then(function(data) {
-          _this.currentPage++;
-          angular.extend(this, data);
+        return Youtube.search(this.queryParams).then(function(data) {
+          _this.currentPageNum++;
+          angular.extend(_this, data);
         });
       },
       prevPage: function() {

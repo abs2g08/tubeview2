@@ -10,8 +10,15 @@
 angular.module('tubeview2App')
   .factory('resultsManager', function (tabManager, PaginationManager) {
 
-    var youtubeAdapter = function() {
+    var youtubeAdapter = function(paginator, resultsObj, callback) {
+      var diff = paginator.currentPageNum - paginator.maxPageReached;
+      var origMaxResults = resultsObj.queryParams.maxResults;
+      resultsObj.queryParams.maxResults = diff*origMaxResults;
 
+      resultsObj.nextPage().then(function() {
+        resultsObj.queryParams.maxResults = origMaxResults;
+        callback(resultsObj.items);
+      });
     }
 
     // Public API here
@@ -22,15 +29,7 @@ angular.module('tubeview2App')
             //totalItems: resultsObj.totalResults.totalResults,
             data: resultsObj.items,
             ajax: function(paginator, callback) {
-              var diff = paginator.currentPageNum - paginator.maxPageReached;
-              var origMaxResults = resultsObj.maxResults;
-              resultsObj.maxResults = diff*origMaxResults;
-
-              var _this = this;
-              resultsObj.nextPage().then(function(resultsObj) {
-                _this.maxResults = origMaxResults;
-                callback(resultsObj);
-              });
+              youtubeAdapter(paginator, resultsObj, callback);
             }
         });
 
