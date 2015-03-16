@@ -10,51 +10,6 @@
 angular.module('tubeview2App')
   .factory('youtubeManager', function (Youtube) {
 
-    // var originalSearch = Youtube.search;
-
-    // Youtube['search'] = function(options) {
-    //   return originalSearch(options).then(function(data) {
-
-    //     var nextPageToken = data.nextPageToken;
-    //     var prevPageToken = data.prevPageToken || '';
-
-    //     return {
-    //       query: options.q,
-    //       videos: data.items,
-    //       totalResults: data.pageInfo,
-    //       currentPage: 0,
-    //       startIndex: 0,
-    //       nextPage: function() {
-    //         options.pageToken = nextPageToken;
-
-    //         var _this = this;
-    //         return originalSearch(options).then(function(data) {
-    //           nextPageToken = data.nextPageToken;
-    //           prevPageToken = data.prevPageToken;
-    //           _this.currentPage = _this.currentPage++;
-    //           return data;
-    //         });
-    //       },
-    //       // prevPage: function() {
-    //       //   options.pageToken = prevPageToken;
-    //       //   return Youtube.search(options);
-    //       // },
-    //       getPage: function(num) {
-    //         options['start-index'] = (this.currentPage*options['max-results'] + 1);
-
-    //         var _this = this;
-    //         return originalSearch(options).then(function(data) {
-    //           nextPageToken = data.nextPageToken;
-    //           prevPageToken = data.prevPageToken;
-    //           _this.currentPage = num;
-    //           return data;
-    //         });
-    //       }
-    //     }
-
-    //   });
-    // }
-
     //TO-DO: completely start over. I want to make a generic object 'result'
 
     var Result = function(queryParams, data) {
@@ -65,7 +20,7 @@ angular.module('tubeview2App')
     }
 
     Result.prototype = {
-      nextPage: function() {
+      nextPage: function(maxResults) {
         this.queryParams.pageToken = this.nextPageToken;
 
         var _this = this;

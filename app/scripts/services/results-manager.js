@@ -10,6 +10,10 @@
 angular.module('tubeview2App')
   .factory('resultsManager', function (tabManager, PaginationManager) {
 
+    var youtubeAdapter = function() {
+
+    }
+
     // Public API here
     return {
       pushResult: function(resultsObj) {
@@ -17,9 +21,14 @@ angular.module('tubeview2App')
             pageLength: resultsObj.pageInfo.resultsPerPage,
             //totalItems: resultsObj.totalResults.totalResults,
             data: resultsObj.items,
-            ajax: function(index, callback) {
+            ajax: function(paginator, callback) {
+              var diff = paginator.currentPageNum - paginator.maxPageReached;
+              var origMaxResults = resultsObj.maxResults;
+              resultsObj.maxResults = diff*origMaxResults;
+
               var _this = this;
               resultsObj.nextPage().then(function(resultsObj) {
+                _this.maxResults = origMaxResults;
                 callback(resultsObj);
               });
             }
