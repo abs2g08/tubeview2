@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'mgcrea.ngStrap',
     'ui.bootstrap',
-    'gapi'
+    'gapi',
+    'svgLoader'
   ])
   .config(function ($routeProvider) {
     $routeProvider
