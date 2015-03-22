@@ -17,16 +17,21 @@ angular.module('svgLoader', [])
   .directive('loader', function () {
     return {
       template:
-        '<div class="loader-container" style="display:none;"><img src="bower_components/svg-loaders/svg-loaders/ball-triangle.svg" width="40" alt=""></div>',
+        '<div class="loader-container"><div class="spinner"><img src="bower_components/svg-loaders/svg-loaders/ball-triangle.svg" width="40" alt=""></div><div class="overlay"></div></div>',
       restrict: 'E',
+      scope: {
+        overlay: '='
+      },
       link: function postLink(scope, element, attrs) {
 
         scope.start = function() {
-          $(element.children()[0]).show();
+          $(element).find('.spinner').addClass('fade-in');
+          $(element).find('.overlay').show();
         }
 
         scope.stop = function() {
-          $(element.children()[0]).hide();
+          $(element).find('.spinner').removeClass('fade-in');
+          $(element).find('.overlay').hide();
         }
 
         scope.$on('us-spinner:spin', function (event) {

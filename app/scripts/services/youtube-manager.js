@@ -10,9 +10,7 @@
 angular.module('tubeview2App')
   .factory('youtubeManager', function (Youtube) {
 
-    //TO-DO: completely start over. I want to make a generic object 'result'
-
-    var Result = function(queryParams, data) {
+    var Result = function(queryParams, data, svgLoaderManager) {
       this.queryParams = queryParams;
       this.currentPageNum = 1;
 
@@ -42,6 +40,7 @@ angular.module('tubeview2App')
 
     return {
       search: function(queryParams) {
+
         var params = angular.extend({}, defaults, queryParams);
         return Youtube.search(params).then(function(data) {
           return new Result(params, data);

@@ -19,6 +19,10 @@ angular.module('tubeview2App')
             $window.initGapi = function() {
               return GAPI.init();
             }
+
+            if($window.gapiLoaded) {
+             return GAPI.init();
+            }
           }
         }
       })
