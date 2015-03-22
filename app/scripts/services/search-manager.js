@@ -12,11 +12,13 @@ angular.module('tubeview2App')
     var search = {
       query: '',
       search: function() {
+        var _this = this;
         youtubeManager
           .search({
             q: this.query,
           }).then(function(resultsObj) {
             resultsManager.pushResult(resultsObj);
+            _this.query = '';
           });
       }
     }

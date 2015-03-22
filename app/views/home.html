@@ -9,7 +9,7 @@
 
 <div ng-controller="TabsCtrl">
   <tabset justified="true">
-    <tab ng-repeat="tab in tabs" heading="test" active="tab.active">
+    <tab ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" active="tab.active">
       <div class="video-list">
         <ul>
           <li class="video-item" ng-repeat="video in tab.pagination.currentPage">
@@ -25,7 +25,7 @@
   </tabset>
 </div>
 
-<loader></loader>
+<loader overlay="true"></loader>
 
 <!-- <div class="loader-container">
   <img src="bower_components/svg-loaders/svg-loaders/ball-triangle.svg" width="40" alt="">
