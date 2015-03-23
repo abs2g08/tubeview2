@@ -22,6 +22,10 @@ angular.module('tubeview2App')
       $log.log('Page changed to: ' + $scope.currentPage);
     };
 
+    $scope.closeTab = function() {
+
+    };
+
     $scope.maxSize = 5;
     $scope.bigTotalItems = 175;
     $scope.bigCurrentPage = 1;

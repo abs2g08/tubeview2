@@ -35,7 +35,8 @@ angular.module('tubeview2App')
     var defaults = {
       'q': '',
       'part': 'snippet',
-      'maxResults': 10
+      'maxResults': 10,
+      'type': 'video'
     }
 
     return {

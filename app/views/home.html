@@ -9,12 +9,23 @@
 
 <div ng-controller="TabsCtrl">
   <tabset justified="true">
-    <tab ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" active="tab.active">
+    <tab class="tab icon ion-close-round" ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" active="tab.active">
       <div class="video-list">
         <ul>
-          <li class="video-item" ng-repeat="video in tab.pagination.currentPage">
-            <div class="id">
-              {{video.id.videoId}}
+          <li class="video-item" ng-repeat="video in tab.pagination.currentPage" ng-videoId="{{video.id.videoId}}">
+            <div class="thumbnail">
+              <img ng-src="{{video.snippet.thumbnails.default.url}}"/>
+            </div>
+            <div class="desc">
+              <div>
+                <h5><a ng-href="/videos/{{video.id.videoId}}">{{video.snippet.title}}</a></h5>
+              </div>
+              <div>
+                by <a ng-href="{{'https://www.youtube.com/channel/' + video.snippet.channelId}}">{{video.snippet.channelTitle}}</a>
+              </div>
+              <div>
+                {{video.snippet.description}}
+              </div>
             </div>
           </li>
         </ul>
@@ -26,19 +37,6 @@
 </div>
 
 <loader overlay="true"></loader>
-
-<!-- <div class="loader-container">
-  <img src="bower_components/svg-loaders/svg-loaders/ball-triangle.svg" width="40" alt="">
-</div> -->
-
-<tabset>
-  <tab heading="test">
-    hello world
-  </tab>
-  <tab heading="me">
-    test me
-  </tab>
-</tabset>
 
 <div class="tabs-footer">
   <button type="button" class="btn btn-default" ng-hide="tabs.length === 0" ng-click="deleteTab()">Delete tab</button>
