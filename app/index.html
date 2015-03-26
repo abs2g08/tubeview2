@@ -10,12 +10,11 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/angular-motion/dist/angular-motion.css" />
     <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
-    <link rel="stylesheet" href="styles/boostrap-theme.css" />
-    <link rel="stylesheet" href="styles/boostrap.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.css">
     <!-- endbuild -->
   </head>
   <body ng-app="tubeview2App">
@@ -61,13 +60,12 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+
         <script src="scripts/modules/svgloader.js"></script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/config.js"></script>
-
-        <!-- <script src="scripts/services/svgloader-manager.js"></script> -->
         <script src="scripts/services/pagination-manager.js"></script>
         <script src="scripts/services/results-manager.js"></script>
         <script src="scripts/services/search-manager.js"></script>
@@ -82,10 +80,8 @@
         <script src="scripts/controllers/search.js"></script>
         <script src="scripts/controllers/tabs.js"></script>
         <script src="scripts/controllers/video-detail.js"></script>
-        <!-- <script src="scripts/directives/svgloader.js"></script> -->
-        <!-- endbuild -->
-
         <script src="scripts/modules/ui-bootstrap-tabs.js"></script>
+        <!-- endbuild -->
 
         <script>
           var init = function() {
