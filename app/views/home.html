@@ -9,7 +9,7 @@
 
 <div ng-controller="TabsCtrl">
   <tabset justified="true">
-    <tab class="tab icon ion-close-round" ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" active="tab.active">
+    <tab class="tab icon" ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" active="tab.active">
       <div class="video-list">
         <ul>
           <li class="video-item" ng-repeat="video in tab.pagination.currentPage" ng-videoId="{{video.id.videoId}}">

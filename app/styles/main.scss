@@ -3,7 +3,6 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 //@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-
 @import "../bower_components/ionicons/scss/ionicons.scss";
 
 .browsehappy {
@@ -70,23 +69,13 @@ body {
   }
 }
 
-.tab {
-  &::before {
-    content: "\f129";
-    position: absolute;
-    z-index: 100;
-    right: 20px;
-    top: 15px;
-  }
-}
-
-.tab-content {
-  .close-tab {
-    position: absolute;
-    right: 15px;
-    z-index: 10;
-  }
-}
+// .nav-tabs {
+//   .icon.ion-close-round {
+//     position: absolute;
+//     top: 30px;
+//     right: 10px;
+//   }
+// }
 
 .video-list {
   margin-bottom: 20px;
@@ -105,6 +94,14 @@ body {
       max-width: 469px;
       float:left;
     }
+  }
+}
+
+.tab {
+  .close-tab {
+    position: absolute;
+    right: 17px;
+    top: 12px;
   }
 }
 
