@@ -8,7 +8,7 @@
  * Service in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('searchManager', function (youtubeManager, resultsManager) {
+  .factory('searchManager', function(youtubeManager, resultsManager) {
     var search = {
       query: '',
       search: function() {
@@ -21,7 +21,7 @@ angular.module('tubeview2App')
             _this.query = '';
           });
       }
-    }
+    };
 
     return search;
   });

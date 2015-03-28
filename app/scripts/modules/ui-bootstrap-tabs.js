@@ -35,6 +35,7 @@ angular.module('ui.bootstrap.tabs', [])
   };
 
   ctrl.removeTab = function removeTab(tab) {
+    tab.onClose();
     var index = tabs.indexOf(tab);
     //Select a new tab if the tab to be removed is selected and not destroyed
     if (tab.active && tabs.length > 1 && !destroyed) {
@@ -190,6 +191,7 @@ angular.module('ui.bootstrap.tabs', [])
     scope: {
       active: '=?',
       heading: '@',
+      onClose: '&close',
       onSelect: '&select', //This callback is called in contentHeadingTransclude
                           //once it inserts the tab's content into the dom
       onDeselect: '&deselect'
@@ -215,6 +217,12 @@ angular.module('ui.bootstrap.tabs', [])
         scope.select = function() {
           if ( !scope.disabled ) {
             scope.active = true;
+          }
+        };
+
+        scope.close = function() {
+          if ( !scope.disabled ) {
+            tabsetCtrl.removeTab(scope);
           }
         };
 

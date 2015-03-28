@@ -8,18 +8,18 @@
  * Factory in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('resultsManager', function (tabManager, PaginationManager) {
+  .factory('resultsManager', function(tabManager, PaginationManager) {
 
     var youtubeAdapter = function(paginator, resultsObj, callback) {
       var diff = paginator.currentPageNum - paginator.maxPageReached;
       var origMaxResults = resultsObj.queryParams.maxResults;
-      resultsObj.queryParams.maxResults = diff*origMaxResults;
+      resultsObj.queryParams.maxResults = diff * origMaxResults;
 
       resultsObj.nextPage().then(function() {
         resultsObj.queryParams.maxResults = origMaxResults;
         callback(resultsObj.items);
       });
-    }
+    };
 
     // Public API here
     return {
@@ -36,7 +36,7 @@ angular.module('tubeview2App')
         var result = {
           pagination: pagination,
           query: resultsObj,
-        }
+        };
 
         tabManager.createTab(result);
       }

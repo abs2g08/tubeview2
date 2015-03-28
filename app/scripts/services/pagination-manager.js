@@ -8,7 +8,7 @@
  * Service in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('PaginationManager', function () {
+  .factory('PaginationManager', function() {
 
     var defaults = {
       currentPageNum: 1,
@@ -20,31 +20,31 @@ angular.module('tubeview2App')
       data: null,
       ajax: null,
       loader: {
-        start: function(){},
-        stop: function(){},
+        start: function() {},
+        stop: function() {},
       },
       paginatedList: []
-    }
+    };
 
     var PaginationManager = function(options) {
       angular.extend(this, defaults, options);
       this.paginatedList = this.paginate(this.data, this.pageLength);
-      this.currentPage = this.paginatedList[this.currentPageNum-1];
-    }
+      this.currentPage = this.paginatedList[this.currentPageNum - 1];
+    };
 
     PaginationManager.prototype = {
 
       updateIndexes: function(pageIndex) {
         this.currentPage = this.paginatedList[pageIndex];
         this.prevPageNum = this.currentPageNum;
-        if(this.currentPageNum > this.maxPageReached) {
+        if (this.currentPageNum > this.maxPageReached) {
           this.maxPageReached = this.currentPageNum;
         }
       },
 
       pageChanged: function() {
-        var pageIndex = (this.currentPageNum-1);
-        if(this.currentPageNum <= this.paginatedList.length) {
+        var pageIndex = (this.currentPageNum - 1);
+        if (this.currentPageNum <= this.paginatedList.length) {
           this.updateIndexes(pageIndex);
         } else {
           var _this = this;
@@ -58,7 +58,7 @@ angular.module('tubeview2App')
       },
 
       pushPage: function(items) {
-        if(items.length === this.pageLength) {
+        if (items.length === this.pageLength) {
           this.paginatedList.push(items);
         } else {
           var newPagedList = this.paginate(items, this.pageLength);
@@ -69,7 +69,7 @@ angular.module('tubeview2App')
       paginate: function(list, pageLength) {
         var pagedList = [], i, len;
 
-        if(list.length >= pageLength) {
+        if (list.length >= pageLength) {
           for (i = 0, len = list.length; i < len; i += pageLength) {
             pagedList.push(list.slice(i, i + pageLength));
           }
@@ -79,8 +79,6 @@ angular.module('tubeview2App')
         return pagedList;
       }
 
-    }
-
+    };
     return PaginationManager;
-
   });

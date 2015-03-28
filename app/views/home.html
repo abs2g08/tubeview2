@@ -9,7 +9,7 @@
 
 <div ng-controller="TabsCtrl">
   <tabset justified="true">
-    <tab class="tab icon" ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" active="tab.active">
+    <tab class="tab icon" ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" close="close()" select="select()" active="tab.active">
       <div class="video-list">
         <ul>
           <li class="video-item" ng-repeat="video in tab.pagination.currentPage" ng-videoId="{{video.id.videoId}}">
@@ -34,10 +34,9 @@
       <pagination total-items="tab.pagination.totalItems" items-per-page="tab.pagination.pageLength" ng-model="tab.pagination.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
     </tab>
   </tabset>
+  <div class="tabs-footer">
+    <button type="button" class="btn btn-default" ng-hide="tabs.length === 0" ng-click="deleteTab()">Delete tab</button>
+  </div>
 </div>
 
 <loader overlay="true"></loader>
-
-<div class="tabs-footer">
-  <button type="button" class="btn btn-default" ng-hide="tabs.length === 0" ng-click="deleteTab()">Delete tab</button>
-</div>
