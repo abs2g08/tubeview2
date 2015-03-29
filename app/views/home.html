@@ -7,7 +7,7 @@
     </div>
 </form>
 
-<div ng-controller="TabsCtrl">
+<div class="tab-container" ng-controller="TabsCtrl">
   <tabset justified="true">
     <tab class="tab icon" ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" close="close(tab)" active="tab.active">
       <div class="video-list">
@@ -37,3 +37,4 @@
 </div>
 
 <loader overlay="true"></loader>
+<modal></modal>

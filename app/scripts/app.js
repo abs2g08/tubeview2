@@ -16,8 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'mgcrea.ngStrap',
     'ui.bootstrap',
+    'dialogs',
+    // 'mgcrea.ngStrap',
     'gapi',
     'svgLoader'
   ])
@@ -30,4 +31,7 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+  })
+  .run(function(ErrorManager) {
+
   });

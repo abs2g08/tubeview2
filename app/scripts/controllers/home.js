@@ -27,5 +27,7 @@ angular.module('tubeview2App')
         }
       })
   })
-  .controller('HomeCtrl', function ($scope, $alert) {
+  .controller('HomeCtrl', function($scope, $modal) {
+    // var myModal = $modal({title: 'Title', content: 'Hello Modal<br />This is a multiline message!', show: false});
+    // myModal.$promise.then(myModal.show);
   });

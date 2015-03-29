@@ -8,7 +8,7 @@
  * Factory in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('httpInterceptor', function ($q, svgLoaderManager) {
+  .factory('httpInterceptor', function ($q, $rootScope, svgLoaderManager) {
     var numLoadings = 0;
 
     return {
@@ -26,10 +26,13 @@ angular.module('tubeview2App')
           // Hide loader
           svgLoaderManager.stop();
         }
+
         return response || $q.when(response);
       },
       responseError: function (response) {
         if (!(--numLoadings)) {
+          $rootScope.$emit('httpError', response);
+
           // Hide loader
           svgLoaderManager.stop();
         }
