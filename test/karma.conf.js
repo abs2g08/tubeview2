@@ -32,6 +32,10 @@ module.exports = function(config) {
       'bower_components/angular-strap/dist/angular-strap.tpl.js',
       'bower_components/ngGAPI/gapi.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/bootstrap/dist/js/bootstrap.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-dialog-service/dist/dialogs.min.js',
+      'bower_components/angular-dialog-service/dist/dialogs-default-translations.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

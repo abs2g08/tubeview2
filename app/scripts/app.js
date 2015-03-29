@@ -17,7 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'dialogs',
+    'dialogs.main',
     // 'mgcrea.ngStrap',
     'gapi',
     'svgLoader'
