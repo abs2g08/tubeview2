@@ -16,9 +16,9 @@ angular.module('tubeview2App')
         page.active = true;
         this.tabs.push(page);
       },
-      close: function() {
+      close: function(tab) {
         for (var i = 0; i < this.tabs.length; i++) {
-          if (this.tabs[i].active === true) {
+          if (this.tabs[i].$$hashKey === tab.$$hashKey) {
             this.tabs.splice(i, 1);
           }
         }

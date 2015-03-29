@@ -23,6 +23,10 @@ angular.module('ui.bootstrap.tabs', [])
     selectedTab.onSelect();
   };
 
+  ctrl.close = function closeTab(tab) {
+    tab.onClose();
+  };
+
   ctrl.addTab = function addTab(tab) {
     tabs.push(tab);
     // we can't run the select function on the first tab
@@ -35,7 +39,6 @@ angular.module('ui.bootstrap.tabs', [])
   };
 
   ctrl.removeTab = function removeTab(tab) {
-    tab.onClose();
     var index = tabs.indexOf(tab);
     //Select a new tab if the tab to be removed is selected and not destroyed
     if (tab.active && tabs.length > 1 && !destroyed) {
@@ -202,6 +205,7 @@ angular.module('ui.bootstrap.tabs', [])
     compile: function(elm, attrs, transclude) {
       return function postLink(scope, elm, attrs, tabsetCtrl) {
         scope.$watch('active', function(active) {
+          debugger;
           if (active) {
             tabsetCtrl.select(scope);
           }
@@ -222,7 +226,7 @@ angular.module('ui.bootstrap.tabs', [])
 
         scope.close = function() {
           if ( !scope.disabled ) {
-            tabsetCtrl.removeTab(scope);
+            tabsetCtrl.close(scope);
           }
         };
 
