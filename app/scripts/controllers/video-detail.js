@@ -25,5 +25,4 @@ angular.module('tubeview2App')
 
   .controller('VideoDetailCtrl', function ($scope, videoData) {
     //$scope.videoData = videoData.data;
-    debugger;
   });

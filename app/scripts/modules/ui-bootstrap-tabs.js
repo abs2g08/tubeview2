@@ -205,7 +205,6 @@ angular.module('ui.bootstrap.tabs', [])
     compile: function(elm, attrs, transclude) {
       return function postLink(scope, elm, attrs, tabsetCtrl) {
         scope.$watch('active', function(active) {
-          debugger;
           if (active) {
             tabsetCtrl.select(scope);
           }

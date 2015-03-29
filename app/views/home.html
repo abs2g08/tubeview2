@@ -34,9 +34,6 @@
       <pagination total-items="tab.pagination.totalItems" items-per-page="tab.pagination.pageLength" ng-model="tab.pagination.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
     </tab>
   </tabset>
-  <div class="tabs-footer">
-    <button type="button" class="btn btn-default" ng-hide="tabs.length === 0" ng-click="deleteTab()">Delete tab</button>
-  </div>
 </div>
 
 <loader overlay="true"></loader>
