@@ -17,12 +17,12 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
+    'pascalprecht.translate',
     'dialogs.main',
-    // 'mgcrea.ngStrap',
     'gapi',
     'svgLoader'
   ])
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/about', {
         templateUrl: 'views/about.html',
