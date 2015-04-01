@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('svgLoader', [])
+
   .factory('svgLoaderManager', function ($rootScope) {
     var config = {};
 
@@ -14,6 +15,7 @@ angular.module('svgLoader', [])
 
     return config;
   })
+
   .directive('loader', function () {
     return {
       template:

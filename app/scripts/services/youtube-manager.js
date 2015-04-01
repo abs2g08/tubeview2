@@ -33,19 +33,20 @@ angular.module('tubeview2App')
     }
 
     var defaults = {
-      'q': '',
-      'part': 'snipppet',
-      'maxResults': 10,
-      'type': 'video'
+      q: '',
+      part: 'snippet',
+      maxResults: 10,
+      type: 'video'
     }
 
     return {
-      search: function(queryParams) {
 
+      search: function(queryParams) {
         var params = angular.extend({}, defaults, queryParams);
         return Youtube.search(params).then(function(data) {
           return new Result(params, data);
         });
+
       }
     }
 

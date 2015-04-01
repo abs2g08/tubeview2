@@ -12,7 +12,6 @@ angular.module('tubeview2App')
 
     var errorManager = {
       handleHttpError: function(event, resp) {
-        debugger;
         var status = resp.status;
         var statusText = resp.statusText;
 
