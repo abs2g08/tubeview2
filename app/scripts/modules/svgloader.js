@@ -19,7 +19,7 @@ angular.module('svgLoader', [])
   .directive('loader', function () {
     return {
       template:
-        '<div class="loader-container"><div class="spinner" style="display:none;"><img src="bower_components/svg-loaders/svg-loaders/ball-triangle.svg" width="40" alt=""></div><div class="overlay" style="display:none;"></div></div>',
+        '<div class="loader-container"><div class="spinner"><img src="bower_components/svg-loaders/svg-loaders/ball-triangle.svg" width="40" alt=""></div><div class="overlay" style="display:none;"></div></div>',
       restrict: 'E',
       scope: {
         overlay: '='
@@ -28,6 +28,7 @@ angular.module('svgLoader', [])
 
         scope.start = function() {
           $(element).find('.spinner').show();
+          $(element).find('.spinner').addClass('fly-up');
           if(scope.overlay) {
             var overlay = $(element).find('.overlay');
             overlay.show();
@@ -36,7 +37,8 @@ angular.module('svgLoader', [])
         }
 
         scope.stop = function() {
-          $(element).find('.spinner').hide();
+          //$(element).find('.spinner').hide();
+          $(element).find('.spinner').removeClass('fly-up');
           if(scope.overlay) {
             var overlay = $(element).find('.overlay');
             overlay.hide();

@@ -14,8 +14,9 @@ angular.module('tubeview2App')
       currentPageNum: 1,
       currentPage: null,
       prevPageNum: 1,
-      pageLength: 5,
+      pageLength: 5, // total length to paginate
       totalItems: 50,
+      maxSize: 5, // length that is shown
       maxPageReached: 1,
       data: null,
       ajax: null,

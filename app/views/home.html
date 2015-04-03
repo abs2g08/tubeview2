@@ -31,7 +31,7 @@
         </ul>
       </div>
       <div ng-hide="tabs.length">No videoes found</div>
-      <pagination total-items="tab.pagination.totalItems" items-per-page="tab.pagination.pageLength" ng-model="tab.pagination.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
+      <pagination total-items="tab.pagination.totalItems" items-per-page="tab.pagination.pageLength" max-size="tab.pagination.maxSize" ng-model="tab.pagination.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
     </tab>
   </tabset>
 </div>
