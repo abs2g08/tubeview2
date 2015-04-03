@@ -24,7 +24,7 @@ angular.module('tubeview2App')
     // Public API here
     return {
       pushResult: function(resultsObj) {
-        debugger;
+
         var pagination = new PaginationManager({
             pageLength: resultsObj.pageInfo.resultsPerPage,
             totalItems: resultsObj.pageInfo.totalResults,
