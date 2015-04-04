@@ -9,6 +9,6 @@
  */
 angular.module('tubeview2App')
 
-  .controller('SearchCtrl', function ($scope, searchManager) {
+  .controller('SearchCtrl', function($scope, searchManager) {
     angular.extend($scope, searchManager);
   });

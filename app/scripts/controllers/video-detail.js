@@ -10,19 +10,19 @@
  */
 angular.module('tubeview2App')
 
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
-      .when('/video/:video_id', {
+      .when('/videos/:video_id', {
         templateUrl: 'views/video-detail.html',
         controller: 'VideoDetailCtrl',
         resolve: {
-          videoData: function($route, youtubeAPI) {
-            return youtubeAPI.getVideo($route.current.params.video_id);
+          videoData: function($route, youtubeManager) {
+            return youtubeManager.get($route.current.params.video_id);
           }
         }
-      })
+      });
   })
 
-  .controller('VideoDetailCtrl', function ($scope, videoData) {
-    //$scope.videoData = videoData.data;
+  .controller('VideoDetailCtrl', function($scope, videoData) {
+    $scope.videoData = videoData;
   });

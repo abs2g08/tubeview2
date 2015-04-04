@@ -9,7 +9,7 @@
  */
 angular.module('tubeview2App')
 
-  .config(function ($routeProvider) {
+  .config(function($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/home.html',
@@ -20,7 +20,7 @@ angular.module('tubeview2App')
               return GAPI.init();
             }
 
-            if($window.gapiLoaded) {
+            if ($window.gapiLoaded) {
              return GAPI.init();
             }
           }

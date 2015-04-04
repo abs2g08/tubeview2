@@ -20,7 +20,8 @@ angular
     'pascalprecht.translate',
     'dialogs.main',
     'gapi',
-    'svgLoader'
+    'svgLoader',
+    'youtube-embed'
   ])
   .config(function($routeProvider) {
     $routeProvider

@@ -9,6 +9,6 @@
  */
 angular.module('tubeview2App')
 
-  .controller('TabsCtrl', function ($scope, tabManager) {
+  .controller('TabsCtrl', function($scope, tabManager) {
     angular.extend($scope, tabManager);
   });

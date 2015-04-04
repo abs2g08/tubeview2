@@ -44,6 +44,8 @@
        ga('send', 'pageview');
     </script>
 
+    <script src="https://www.youtube.com/iframe_api"></script>
+
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -63,43 +65,44 @@
     <script src="bower_components/angular-translate/angular-translate.js"></script>
     <script src="bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
     <script src="bower_components/angular-dialog-service/dist/dialogs-default-translations.min.js"></script>
+    <script src="bower_components/angular-youtube-mb/src/angular-youtube-embed.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
 
-        <script src="scripts/app.js"></script>
-        <script src="scripts/config.js"></script>
-        <script src="scripts/lang.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/lang.js"></script>
 
-        <script src="scripts/services/pagination-manager.js"></script>
-        <script src="scripts/services/results-manager.js"></script>
-        <script src="scripts/services/search-manager.js"></script>
-        <script src="scripts/services/tab-manager.js"></script>
-        <script src="scripts/services/youtube-manager.js"></script>
-        <script src="scripts/services/error-manager.js"></script>
-        <script src="scripts/services/http-interceptor.js"></script>
+    <script src="scripts/services/pagination-manager.js"></script>
+    <script src="scripts/services/results-manager.js"></script>
+    <script src="scripts/services/search-manager.js"></script>
+    <script src="scripts/services/tab-manager.js"></script>
+    <script src="scripts/services/youtube-manager.js"></script>
+    <script src="scripts/services/error-manager.js"></script>
+    <script src="scripts/services/http-interceptor.js"></script>
 
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/home.js"></script>
-        <script src="scripts/controllers/results.js"></script>
-        <script src="scripts/controllers/search.js"></script>
-        <script src="scripts/controllers/tabs.js"></script>
-        <script src="scripts/controllers/video-detail.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/results.js"></script>
+    <script src="scripts/controllers/search.js"></script>
+    <script src="scripts/controllers/tabs.js"></script>
+    <script src="scripts/controllers/video-detail.js"></script>
 
-        <script src="scripts/modules/svgloader.js"></script>
-        <script src="scripts/modules/ui-bootstrap-tabs.js"></script>
-        <!-- endbuild -->
+    <script src="scripts/modules/svgloader.js"></script>
+    <script src="scripts/modules/ui-bootstrap-tabs.js"></script>
+    <!-- endbuild -->
 
-        <script>
-          var init = function() {
-            if(window.initGapi) {
-              window.initGapi();
-            } else {
-              window.gapiLoaded = true;
-            }
-          }
-        </script>
-        <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script>
+      var init = function() {
+        if(window.initGapi) {
+          window.initGapi();
+        } else {
+          window.gapiLoaded = true;
+        }
+      }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
 </body>
 </html>

@@ -15,6 +15,7 @@ angular.module('tubeview2App')
       noResults: false,
       search: function() {
         var _this = this;
+
         youtubeManager
           .search({
             q: this.query,
