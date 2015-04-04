@@ -11,14 +11,23 @@ angular.module('tubeview2App')
   .factory('searchManager', function(youtubeManager, resultsManager) {
     var search = {
       query: '',
+      noResultsQuery: '',
+      noResults: false,
       search: function() {
         var _this = this;
         youtubeManager
           .search({
             q: this.query,
-          }).then(function(resultsObj) {
-            resultsManager.pushResult(resultsObj);
-            _this.query = '';
+          })
+          .then(function(resultsObj) {
+            if (resultsObj.items.length > 0) {
+              resultsManager.pushResult(resultsObj);
+              _this.noResults = false;
+              _this.query = '';
+            } else {
+              _this.noResults = true;
+              _this.noResultsQuery = angular.copy(_this.query);
+            }
           });
       }
     };
