@@ -10,7 +10,7 @@
 angular.module('tubeview2App')
   .factory('youtubeManager', function(Youtube) {
 
-    var Result = function(queryParams, data, svgLoaderManager) {
+    var Result = function(queryParams, data, svgLoaderManager, GAPI, $window) {
       this.queryParams = queryParams;
       this.currentPageNum = 1;
 
@@ -55,6 +55,16 @@ angular.module('tubeview2App')
         }).then(function(data) {
           return data.items[0].id;
         });
+      },
+
+      init: function($routeProvider) {
+        $window.initGapi = function() {
+          return GAPI.init();
+        }
+
+        if ($window.gapiLoaded) {
+         return GAPI.init();
+        }
       }
     };
   });

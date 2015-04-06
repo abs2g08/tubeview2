@@ -14,7 +14,7 @@ angular.module('tubeview2App')
       .when('/', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl',
-        resolve: {
+        preResolve: {
           gapi: function(GAPI, $window) {
             $window.initGapi = function() {
               return GAPI.init();
