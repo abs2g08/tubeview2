@@ -17,7 +17,9 @@ angular.module('tubeview2App')
         controller: 'VideoDetailCtrl',
         resolve: {
           videoData: function($route, youtubeManager) {
-            return youtubeManager.get($route.current.params.video_id);
+            return youtubeManager.init().then(function() {
+              return youtubeManager.get($route.current.params.video_id);
+            });
           }
         }
       });

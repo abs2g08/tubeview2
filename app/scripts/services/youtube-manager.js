@@ -8,9 +8,9 @@
  * Factory in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('youtubeManager', function(Youtube) {
+  .factory('youtubeManager', function(Youtube, GAPI, $window, $q) {
 
-    var Result = function(queryParams, data, svgLoaderManager, GAPI, $window) {
+    var Result = function(queryParams, data, svgLoaderManager) {
       this.queryParams = queryParams;
       this.currentPageNum = 1;
 
@@ -39,6 +39,8 @@ angular.module('tubeview2App')
       type: 'video'
     };
 
+    var gapiFullyLoaded = false;
+
     return {
 
       search: function(queryParams) {
@@ -57,14 +59,26 @@ angular.module('tubeview2App')
         });
       },
 
-      init: function($routeProvider) {
-        $window.initGapi = function() {
-          return GAPI.init();
-        }
+      init: function() {
+        return $q(function(resolve, reject) {
+          if (gapiFullyLoaded) {
+            resolve();
+          }
 
-        if ($window.gapiLoaded) {
-         return GAPI.init();
-        }
+          $window.initGapi = function() {
+            gapiFullyLoaded = true;
+            GAPI.init().then(function() {
+              resolve();
+            });
+          }
+
+          if ($window.gapiLoaded) {
+            gapiFullyLoaded = true;
+            GAPI.init().then(function() {
+              resolve();
+            });
+          }
+        });
       }
     };
   });

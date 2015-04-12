@@ -14,15 +14,9 @@ angular.module('tubeview2App')
       .when('/', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl',
-        preResolve: {
-          gapi: function(GAPI, $window) {
-            $window.initGapi = function() {
-              return GAPI.init();
-            }
-
-            if ($window.gapiLoaded) {
-             return GAPI.init();
-            }
+        resolve: {
+          initYoutube: function(youtubeManager) {
+            return youtubeManager.init();
           }
         }
       })

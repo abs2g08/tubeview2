@@ -25,25 +25,6 @@ angular
   ])
   .config(function($routeProvider) {
 
-    var originalWhen = $routeProvider.when;
-
-    $routeProvider.when = function(path, route) {
-        route.preResolve || (route.preResolve = {});
-        angular.extend(route.preResolve, {
-          gapi: function(GAPI, $window) {
-            $window.initGapi = function() {
-              return GAPI.init();
-            }
-
-            if ($window.gapiLoaded) {
-             return GAPI.init();
-            }
-          }
-        });
-
-        return originalWhen.call($routeProvider, path, route);
-    };
-
   })
   .run(function(ErrorManager) {
 
