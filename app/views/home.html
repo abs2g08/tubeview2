@@ -10,7 +10,7 @@
     </div>
 </form>
 
-<div class="tab-container" ng-controller="TabsCtrl">
+<div class="tab-container" ng-show="tabs.length" ng-controller="TabsCtrl">
   <tabset justified="true">
     <tab class="tab icon" ng-repeat="tab in tabs" heading="{{tab.query.queryParams.q}}" close="close(tab)" active="tab.active">
       <div class="video-list">
