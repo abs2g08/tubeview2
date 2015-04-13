@@ -23,9 +23,6 @@ angular
     'svgLoader',
     'youtube-embed'
   ])
-  .config(function($routeProvider) {
-
-  })
   .run(function(ErrorManager) {
 
   });

@@ -1,5 +1,13 @@
 'use strict';
 
+var init = function() {
+  if (window.initGapi) {
+    window.initGapi();
+  } else {
+    window.gapiLoaded = true;
+  }
+};
+
 /**
  * @ngdoc service
  * @name tubeview2App.youtubeService
@@ -70,7 +78,7 @@ angular.module('tubeview2App')
             GAPI.init().then(function() {
               resolve();
             });
-          }
+          };
 
           if ($window.gapiLoaded) {
             gapiFullyLoaded = true;
