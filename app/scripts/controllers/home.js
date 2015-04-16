@@ -23,4 +23,5 @@ angular.module('tubeview2App')
   })
 
   .controller('HomeCtrl', function($scope) {
+    $scope.screenName = 'home';
   });
