@@ -13,7 +13,7 @@ angular.module('tubeview2App')
       query: '',
       noResultsQuery: '',
       noResults: false,
-      search: function() {
+      submitForm: function() {
         var _this = this;
 
         youtubeManager

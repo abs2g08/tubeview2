@@ -1,8 +1,8 @@
-<form class="search-bar" ng-controller="SearchCtrl">
+<form name="searchForm" class="search-bar" ng-controller="SearchCtrl" ng-submit="submitForm(searchForm.$valid)">
    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for..." ng-model="query" ng-enter="search()">
+      <input type="text" name="searchInput" class="form-control" placeholder="Search for..." ng-model="query" required>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click="search()">Search</button>
+        <button class="btn btn-default" type="submit">Search</button>
       </span>
     </div>
     <div ng-show="noResults">
