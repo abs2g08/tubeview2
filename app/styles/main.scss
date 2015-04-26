@@ -164,10 +164,6 @@ body {
   }
 }
 
-.tab-container {
-  //box-shadow: 0 1px 2px rgba(0,0,0,.1);
-}
-
 .tab-content {
   position: relative;
   background-color: white;
@@ -199,25 +195,6 @@ body {
     }
   }
 }
-
-// @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-// @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-// @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-// .fade-in {
-//   opacity:0;  /* make things invisible upon start */
-//   -webkit-animation:fadeIn ease-in 0.3;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
-//   -moz-animation:fadeIn ease-in 0.3;
-//   animation:fadeIn ease-in 0.3;
-
-//   -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
-//   -moz-animation-fill-mode:forwards;
-//   animation-fill-mode:forwards;
-
-//   -webkit-animation-duration:0.3s;
-//   -moz-animation-duration:0.3s;
-//   animation-duration:0.3s;
-// }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }

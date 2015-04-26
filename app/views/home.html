@@ -1,12 +1,12 @@
 <form name="searchForm" class="search-bar" ng-controller="SearchCtrl" ng-submit="submitForm(searchForm.$valid)">
    <div class="input-group">
-      <input type="text" name="searchInput" class="form-control" placeholder="Search for..." ng-model="query" required>
+      <input type="text" name="searchInput" class="form-control" placeholder="{{'SEARCH_FOR' | translate}}" ng-model="query" required>
       <span class="input-group-btn">
-        <button class="btn btn-default" type="submit">Search</button>
+        <button class="btn btn-default" type="submit">{{'SEARCH_BTN_TEXT' | translate}}</button>
       </span>
     </div>
     <div ng-show="noResults">
-      No results for <span class="bold">{{noResultsQuery}}</span>
+      {{'SEARCH_ERROR' | translate }} <span class="bold">{{noResultsQuery}}</span>
     </div>
 </form>
 
@@ -17,14 +17,14 @@
         <ul>
           <li class="video-item" ng-repeat="video in tab.pagination.currentPage" ng-videoId="{{video.id.videoId}}">
             <div class="thumbnail">
-              <img ng-src="{{video.snippet.thumbnails.default.url}}"/>
+              <img ng-src="{{video.snippet.thumbnails.default.url}}" ng-errorSrc="images/default.png" />
             </div>
             <div class="detail">
               <div>
                 <h5><a ng-href="#/videos/{{video.id.videoId}}">{{video.snippet.title}}</a></h5>
               </div>
               <div>
-                by <a ng-href="{{'https://www.youtube.com/channel/' + video.snippet.channelId}}">{{video.snippet.channelTitle}}</a>
+                {{'SEARCH_BY' | translate}} <a ng-href="{{'https://www.youtube.com/channel/' + video.snippet.channelId}}">{{video.snippet.channelTitle}}</a>
               </div>
               <div class="desc">
                 {{video.snippet.description}}
@@ -33,7 +33,6 @@
           </li>
         </ul>
       </div>
-      <div ng-hide="tabs.length">No videoes found</div>
       <pagination total-items="tab.pagination.totalItems" items-per-page="tab.pagination.pageLength" max-size="tab.pagination.maxSize" ng-model="tab.pagination.currentPageNum" ng-change="tab.pagination.pageChanged()"></pagination>
     </tab>
   </tabset>

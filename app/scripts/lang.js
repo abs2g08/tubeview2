@@ -15,7 +15,12 @@ angular.module('tubeview2App')
           DIALOGS_CONFIRMATION_MSG: "Confirmation required.",
           DIALOGS_OK: "OK",
           DIALOGS_YES: "Yes",
-          DIALOGS_NO: "No"
+          DIALOGS_NO: "No",
+
+          SEARCH_ERROR: "No results for",
+          SEARCH_FOR: "Search for...",
+          SEARCH_BTN_TEXT: "Search",
+          SEARCH_BY: "by"
       });
       $translateProvider.preferredLanguage('en-US');
   });
