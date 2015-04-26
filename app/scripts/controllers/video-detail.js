@@ -28,8 +28,9 @@ angular.module('tubeview2App')
   .controller('VideoDetailCtrl', function($scope, videoData, svgLoaderManager) {
     $scope.screenName = 'video-detail';
     $scope.videoData = videoData;
+    $scope.videoLoaded = false;
 
-    $scope.$on('youtube.player.ready', function ($event, player) {
-
+    $scope.$on('youtube.player.ready', function($event, player) {
+      $scope.videoLoaded = true;
     });
   });

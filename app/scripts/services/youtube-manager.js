@@ -34,9 +34,6 @@ angular.module('tubeview2App')
           _this.currentPageNum++;
           angular.extend(_this, data);
         });
-      },
-      prevPage: function() {
-        //TO-DO
       }
     };
 
