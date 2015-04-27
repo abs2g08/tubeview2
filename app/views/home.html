@@ -1,6 +1,6 @@
 <form name="searchForm" class="search-bar" ng-controller="SearchCtrl" ng-submit="submitForm(searchForm.$valid)">
    <div class="input-group">
-      <input type="text" name="searchInput" class="form-control" placeholder="{{'SEARCH_FOR' | translate}}" ng-model="query" required>
+      <input type="text" name="searchInput" class="form-control searchInput" placeholder="{{'SEARCH_FOR' | translate}}" ng-model="query" required>
       <span class="input-group-btn">
         <button class="btn btn-default" type="submit">{{'SEARCH_BTN_TEXT' | translate}}</button>
       </span>
@@ -17,7 +17,9 @@
         <ul>
           <li class="video-item" ng-repeat="video in tab.pagination.currentPage" ng-videoId="{{video.id.videoId}}">
             <div class="thumbnail">
-              <img ng-src="{{video.snippet.thumbnails.default.url}}" ng-errorsrc="images/default.png" />
+              <a ng-href="#/videos/{{video.id.videoId}}">
+                <img ng-src="{{video.snippet.thumbnails.default.url}}" ng-errorsrc="images/default.png" />
+              </a>
             </div>
             <div class="detail">
               <div>

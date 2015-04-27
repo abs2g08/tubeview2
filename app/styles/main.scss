@@ -30,14 +30,27 @@ body {
   padding-right: 15px;
 }
 
+.copywrite {
+  font-size: 12px;
+  color: rgb(219, 219, 219);
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.navbar {
+  border-radius: 0px;
+  border-bottom: 0px;
+}
+
+.navbar-default .navbar-brand {
+  color: #AA4949;
+  border-left: 5px solid rgb(201, 201, 201);
+}
+
 /* Custom page header */
 .header {
-  border-bottom: 1px solid #e5e5e5;
+  //border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
-
-  .navbar-brand {
-    color: #50cf77;
-  }
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -272,6 +285,23 @@ body {
 
 .search-bar {
   margin: 10px 0px 20px 0px;
+}
+
+.searchInput {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+      color: rgb(151, 205, 167);
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: rgb(151, 205, 167);
+     opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: rgb(151, 205, 167);
+     opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+     color: rgb(151, 205, 167);
+  }
 }
 
 .bold {
