@@ -108,11 +108,16 @@ body {
       float:left;
       width: 120px;
       height: 90px;
+      margin-top: 10px;
     }
     .detail {
       margin-left: 10px;
       max-width: 469px;
       float:left;
+
+      h5 {
+        margin-bottom: 5px;
+      }
 
       .desc {
         font-size: 12px;
