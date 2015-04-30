@@ -3,7 +3,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 //@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "../bower_components/ionicons/scss/ionicons.scss";
+//@import "../bower_components/ionicons/scss/ionicons.scss";
 
 .browsehappy {
   margin: 0.2em 0;
@@ -109,11 +109,10 @@ body {
       width: 120px;
       height: 90px;
       margin-top: 10px;
+      margin: 10px 10px 10px 0px;
     }
     .detail {
-      margin-left: 10px;
       max-width: 469px;
-      float:left;
 
       h5 {
         margin-bottom: 5px;
@@ -121,6 +120,8 @@ body {
 
       .desc {
         font-size: 12px;
+        max-height: 50px;
+        overflow: auto;
       }
     }
   }
