@@ -9,10 +9,14 @@
  */
 angular.module('tubeview2App')
 
+  .config(function($routeProvider) {
+    $routeProvider
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
+      })
+  })
+
   .controller('AboutCtrl', function($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.screenName = 'about';
   });
