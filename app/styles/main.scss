@@ -318,16 +318,20 @@ iframe {
   //opacity: 0;
 }
 
-.img-me {
-  border: 2px solid #50cf77;
-  border-radius: 50%;
-  width:100px;
-}
-
 .info {
   padding-top: 20px;
+  padding-bottom: 20px;
   .img-container {
     display: inline-block;
+    width: 100%;
+
+    .img-me {
+      border: 2px solid #50cf77;
+      border-radius: 50%;
+      width:100px;
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   .about-me {
@@ -363,6 +367,14 @@ iframe {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
+  }
+  .info {
+    .img-container {
+      width: auto;
+      .img-me {
+        display: inline-block;
+      }
+    }
   }
 
   /* Remove the padding we set earlier */
