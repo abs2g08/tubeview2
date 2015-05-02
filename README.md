@@ -1,7 +1,6 @@
 # tubeview2
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.0.
+Tubeview 2 is a nontrivial Youtube client written in Angular.js.
 
 ## Build & development
 
