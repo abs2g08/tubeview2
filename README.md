@@ -1,4 +1,4 @@
-# tubeview2
+# Tubeview2
 
 Tubeview2 is a Youtube client written in Angular.js.
 
