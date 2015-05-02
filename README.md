@@ -5,6 +5,8 @@ version 0.11.0.
 
 ## Build & development
 
+Add Youtube API keys to config.js
+
 Run `grunt` for building and `grunt serve` for preview.
 
 ## Testing
