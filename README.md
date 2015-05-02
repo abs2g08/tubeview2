@@ -1,6 +1,6 @@
 # tubeview2
 
-Tubeview 2 is a nontrivial Youtube client written in Angular.js.
+Tubeview2 is a Youtube client written in Angular.js.
 
 ## Build & development
 
