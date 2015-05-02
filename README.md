@@ -9,13 +9,9 @@ Add Youtube API keys to config.js
 
 Run `grunt` for building and `grunt serve` for preview.
 
-## Screenshot 1
+## Screenshot
 
 ![Search](http://i.imgur.com/peSsFdL.png?1)
-
-## Screenshot 2
-
-[Search Results](http://i.imgur.com/vRvAuaH.png?1)
 
 ## Testing
 
