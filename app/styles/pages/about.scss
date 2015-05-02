@@ -1,0 +1,23 @@
+.info {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  .img-container {
+    display: inline-block;
+    width: 100%;
+
+    .img-me {
+      border: 2px solid #50cf77;
+      border-radius: 50%;
+      width:100px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  .about-me {
+    position: relative;
+    display: inline-block;
+    top: 20px;
+    left: 20px;
+  }
+}

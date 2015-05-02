@@ -1,0 +1,20 @@
+.search-bar {
+  margin: 10px 0px 20px 0px;
+}
+
+.searchInput {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+      color: rgb(151, 205, 167);
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+     color: rgb(151, 205, 167);
+     opacity:  1;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+     color: rgb(151, 205, 167);
+     opacity:  1;
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+     color: rgb(151, 205, 167);
+  }
+}

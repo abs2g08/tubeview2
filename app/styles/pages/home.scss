@@ -1,0 +1,55 @@
+.video-list {
+  ul {
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+
+  .video-item {
+    list-style-type: none;
+    overflow: auto;
+    height: 115px;
+
+    .thumbnail {
+      border: none;
+      float:left;
+      width: 120px;
+      height: 90px;
+      margin-top: 10px;
+      margin: 10px 10px 10px 0px;
+    }
+    .detail {
+      max-width: 469px;
+
+      h5 {
+        margin-bottom: 5px;
+      }
+
+      .desc {
+        font-size: 12px;
+        max-height: 50px;
+        overflow: auto;
+      }
+    }
+  }
+}
+
+/* you can also define the transition style
+   on the base class as well (.repeat-item) */
+.video-item.ng-enter,
+.video-item.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.video-item.ng-enter,
+.video-item.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.video-itemng-leave,
+.video-item.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.video-container {
+  opacity: 0;
+}

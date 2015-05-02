@@ -5,391 +5,407 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 //@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 //@import "../bower_components/ionicons/scss/ionicons.scss";
 
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
+@import "variables.scss";
+@import "core.scss";
+@import "animation.scss";
 
-html {
-  height: 100%;
-}
+@import "breakpoints/768px.scss";
 
-body {
-  height: 100%;
-  background-color: #FDFDFD;
-  padding: 0;
-}
+@import "pages/about.scss";
+@import "pages/home.scss";
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
+@import "partials/footer.scss";
+@import "partials/header.scss";
+@import "partials/pagination.scss";
+@import "partials/search.scss";
+@import "partials/svgloader.scss";
+@import "partials/tabs.scss";
 
-.copywrite {
-  font-size: 12px;
-  color: rgb(219, 219, 219);
-  text-align: center;
-  padding-bottom: 5px;
-}
+// .browsehappy {
+//   margin: 0.2em 0;
+//   background: #ccc;
+//   color: #000;
+//   padding: 0.2em 0;
+// }
 
-.navbar {
-  border-radius: 0px;
-  border-bottom: 0px;
-}
+// html {
+//   height: 100%;
+// }
 
-.navbar-default .navbar-brand {
-  color: #AA4949;
-  border-left: 5px solid rgb(201, 201, 201);
-}
+// body {
+//   height: 100%;
+//   background-color: #FDFDFD;
+//   padding: 0;
+// }
 
-/* Custom page header */
-.header {
-  //border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+// /* Everything but the jumbotron gets side spacing for mobile first views */
+// .header,
+// .marketing,
+// .footer {
+//   padding-left: 15px;
+//   padding-right: 15px;
+// }
 
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
+// .copywrite {
+//   font-size: 12px;
+//   color: rgb(219, 219, 219);
+//   text-align: center;
+//   padding-bottom: 5px;
+// }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  //border-top: 1px solid #e5e5e5;
-}
+// .navbar {
+//   border-radius: 0px;
+//   border-bottom: 0px;
+// }
 
-.container-narrow > hr {
-  margin: 30px 0;
-}
+// .navbar-default .navbar-brand {
+//   color: #AA4949;
+//   border-left: 5px solid rgb(201, 201, 201);
+// }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
+// /* Custom page header */
+// .header {
+//   //border-bottom: 1px solid #e5e5e5;
+//   margin-bottom: 10px;
 
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
+//   /* Make the masthead heading the same height as the navigation */
+//   h3 {
+//     margin-top: 0;
+//     margin-bottom: 0;
+//     line-height: 40px;
+//     padding-bottom: 19px;
+//   }
+// }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
+// /* Custom page footer */
+// .footer {
+//   padding-top: 19px;
+//   color: #777;
+//   //border-top: 1px solid #e5e5e5;
+// }
 
-  p + h4 {
-    margin-top: 28px;
-  }
-}
+// .container-narrow > hr {
+//   margin: 30px 0;
+// }
 
-.video-list {
-  ul {
-    padding-top: 20px;
-    padding-left: 20px;
-  }
+// /* Main marketing message and sign up button */
+// .jumbotron {
+//   text-align: center;
+//   border-bottom: 1px solid #e5e5e5;
 
-  .video-item {
-    list-style-type: none;
-    overflow: auto;
-    height: 115px;
+//   .btn {
+//     font-size: 21px;
+//     padding: 14px 24px;
+//   }
+// }
 
-    .thumbnail {
-      border: none;
-      float:left;
-      width: 120px;
-      height: 90px;
-      margin-top: 10px;
-      margin: 10px 10px 10px 0px;
-    }
-    .detail {
-      max-width: 469px;
+// /* Supporting marketing content */
+// .marketing {
+//   margin: 40px 0;
 
-      h5 {
-        margin-bottom: 5px;
-      }
+//   p + h4 {
+//     margin-top: 28px;
+//   }
+// }
 
-      .desc {
-        font-size: 12px;
-        max-height: 50px;
-        overflow: auto;
-      }
-    }
-  }
-}
+// .video-list {
+//   ul {
+//     padding-top: 20px;
+//     padding-left: 20px;
+//   }
 
-@mixin fade-in() {
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  opacity: 0;
-}
+//   .video-item {
+//     list-style-type: none;
+//     overflow: auto;
+//     height: 115px;
 
-@mixin fade-in-active() {
-  opacity: 1;
-}
+//     .thumbnail {
+//       border: none;
+//       float:left;
+//       width: 120px;
+//       height: 90px;
+//       margin-top: 10px;
+//       margin: 10px 10px 10px 0px;
+//     }
+//     .detail {
+//       max-width: 469px;
 
-@mixin fade-out() {
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  opacity: 1;
-}
+//       h5 {
+//         margin-bottom: 5px;
+//       }
 
-@mixin fade-out-active() {
-  opacity: 0;
-}
+//       .desc {
+//         font-size: 12px;
+//         max-height: 50px;
+//         overflow: auto;
+//       }
+//     }
+//   }
+// }
 
-.screen {
-  &.home.ng-enter {
-    @include fade-in();
-  }
+// @mixin fade-in() {
+//   -webkit-transition-property: opacity;
+//   -moz-transition-property: opacity;
+//   -o-transition-property: opacity;
+//   transition-property: opacity;
+//   -webkit-transition-duration: 0.5s;
+//   -moz-transition-duration: 0.5s;
+//   -o-transition-duration: 0.5s;
+//   transition-duration: 0.5s;
+//   position: relative;
+//   top: 0px;
+//   left: 0px;
+//   opacity: 0;
+// }
 
-  &.home.ng-enter-active {
-    @include fade-in-active();
-  }
+// @mixin fade-in-active() {
+//   opacity: 1;
+// }
 
-  &.video-detail.ng-leave {
-    @include fade-out();
-  }
+// @mixin fade-out() {
+//   -webkit-transition-property: opacity;
+//   -moz-transition-property: opacity;
+//   -o-transition-property: opacity;
+//   transition-property: opacity;
+//   -webkit-transition-duration: 0.5s;
+//   -moz-transition-duration: 0.5s;
+//   -o-transition-duration: 0.5s;
+//   transition-duration: 0.5s;
+//   position: absolute;
+//   top: 0px;
+//   left: 0px;
+//   opacity: 1;
+// }
 
-  &.video-detail.ng-leave-active {
-    @include fade-out-active();
-  }
-}
+// @mixin fade-out-active() {
+//   opacity: 0;
+// }
 
-.tab-content {
-  position: relative;
-  background-color: white;
-  border-right: 1px solid #ddd;
-  border-left: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 20px;
-}
+// .screen {
+//   &.home.ng-enter {
+//     @include fade-in();
+//   }
 
-.tab {
+//   &.home.ng-enter-active {
+//     @include fade-in-active();
+//   }
 
-  &.active {
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
-  }
+//   &.video-detail.ng-leave {
+//     @include fade-out();
+//   }
 
-  .close-tab {
-    position: absolute;
-    padding-left: 4px;
-    right: 17px;
-    top: 12px;
+//   &.video-detail.ng-leave-active {
+//     @include fade-out-active();
+//   }
+// }
 
-    &:hover {
-      border: 1px solid lightgrey;
-      border-radius: 50% 50%;
-      width: 21px;
-      height: 21px;
-      background-color: #e7e7e7;
-      right: 11px;
-    }
-  }
-}
+// .tab-content {
+//   position: relative;
+//   background-color: white;
+//   border-right: 1px solid #ddd;
+//   border-left: 1px solid #ddd;
+//   border-bottom: 1px solid #ddd;
+//   padding-bottom: 20px;
+// }
 
-@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+// .tab {
 
-.fade-in {
- opacity:0;  /* make things invisible upon start */
- -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
- -moz-animation:fadeIn ease-in 1;
- animation:fadeIn ease-in 1;
+//   &.active {
+//     box-shadow: 0 1px 2px rgba(0,0,0,.1);
+//   }
 
- -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
- -moz-animation-fill-mode:forwards;
- animation-fill-mode:forwards;
+//   .close-tab {
+//     position: absolute;
+//     padding-left: 4px;
+//     right: 17px;
+//     top: 12px;
 
- -webkit-animation-duration:1s;
- -moz-animation-duration:1s;
- animation-duration:1s;
-}
+//     &:hover {
+//       border: 1px solid lightgrey;
+//       border-radius: 50% 50%;
+//       width: 21px;
+//       height: 21px;
+//       background-color: #e7e7e7;
+//       right: 11px;
+//     }
+//   }
+// }
 
-.fly-up {
-  bottom:45% !important;
-}
+// @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+// @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+// @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-.loader-container {
-  .spinner {
-    background-color: #50cf77;
-    display: inline-block;
-    padding: 25px;
-    border-radius: 10px;
-    border: 4px solid #fff;
-    position: fixed;
-    z-index: 1001;
-    bottom:-20%;
-    left: 45%;
+// .fade-in {
+//  opacity:0;  /* make things invisible upon start */
+//  -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+//  -moz-animation:fadeIn ease-in 1;
+//  animation:fadeIn ease-in 1;
 
-    -webkit-transition-duration: 0.3s; /* Safari */
-    transition-duration: 0.3s;
+//  -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+//  -moz-animation-fill-mode:forwards;
+//  animation-fill-mode:forwards;
 
-    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
-    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
+//  -webkit-animation-duration:1s;
+//  -moz-animation-duration:1s;
+//  animation-duration:1s;
+// }
 
-    -webkit-transition: all 500ms cubic-bezier(0.015, 1, 0.000, 0.870); /* older webkit */
-    -webkit-transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870);
-       -moz-transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870);
-         -o-transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870);
-            transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870); /* custom */
+// .fly-up {
+//   bottom:45% !important;
+// }
 
-    -webkit-transition-timing-function: cubic-bezier(0.015, 1, 0.000, 0.870); /* older webkit */
-    -webkit-transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870);
-       -moz-transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870);
-         -o-transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870);
-            transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870); /* custom */
-  }
+// .loader-container {
+//   .spinner {
+//     background-color: #50cf77;
+//     display: inline-block;
+//     padding: 25px;
+//     border-radius: 10px;
+//     border: 4px solid #fff;
+//     position: fixed;
+//     z-index: 1001;
+//     bottom:-20%;
+//     left: 45%;
 
-  .overlay {
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
-    background-color: rgba(0,0,0,0.5); /*dim the background*/
+//     -webkit-transition-duration: 0.3s; /* Safari */
+//     transition-duration: 0.3s;
 
-    user-select: none;
-    -webkit-user-select: none;
-  }
-}
+//     -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
+//     box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.37);
 
-.pagination {
-  display: table;
-  margin: 0 auto;
-}
+//     -webkit-transition: all 500ms cubic-bezier(0.015, 1, 0.000, 0.870); /* older webkit */
+//     -webkit-transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870);
+//        -moz-transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870);
+//          -o-transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870);
+//             transition: all 500ms cubic-bezier(0.015, 1.030, 0.000, 0.870); /* custom */
 
-.search-bar {
-  margin: 10px 0px 20px 0px;
-}
+//     -webkit-transition-timing-function: cubic-bezier(0.015, 1, 0.000, 0.870); /* older webkit */
+//     -webkit-transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870);
+//        -moz-transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870);
+//          -o-transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870);
+//             transition-timing-function: cubic-bezier(0.015, 1.030, 0.000, 0.870); /* custom */
+//   }
 
-.searchInput {
-  &::-webkit-input-placeholder { /* WebKit browsers */
-      color: rgb(151, 205, 167);
-  }
-  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-     color: rgb(151, 205, 167);
-     opacity:  1;
-  }
-  &::-moz-placeholder { /* Mozilla Firefox 19+ */
-     color: rgb(151, 205, 167);
-     opacity:  1;
-  }
-  &:-ms-input-placeholder { /* Internet Explorer 10+ */
-     color: rgb(151, 205, 167);
-  }
-}
+//   .overlay {
+//     opacity: 0;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     z-index: 1000;
+//     background-color: rgba(0,0,0,0.5); /*dim the background*/
 
-.bold {
-  font-weight: bold;
-}
+//     user-select: none;
+//     -webkit-user-select: none;
+//   }
+// }
 
-iframe {
-  //opacity: 0;
-}
+// .pagination {
+//   display: table;
+//   margin: 0 auto;
+// }
 
-.info {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  .img-container {
-    display: inline-block;
-    width: 100%;
+// .search-bar {
+//   margin: 10px 0px 20px 0px;
+// }
 
-    .img-me {
-      border: 2px solid #50cf77;
-      border-radius: 50%;
-      width:100px;
-      display: block;
-      margin: 0 auto;
-    }
-  }
+// .searchInput {
+//   &::-webkit-input-placeholder { /* WebKit browsers */
+//       color: rgb(151, 205, 167);
+//   }
+//   &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+//      color: rgb(151, 205, 167);
+//      opacity:  1;
+//   }
+//   &::-moz-placeholder { /* Mozilla Firefox 19+ */
+//      color: rgb(151, 205, 167);
+//      opacity:  1;
+//   }
+//   &:-ms-input-placeholder { /* Internet Explorer 10+ */
+//      color: rgb(151, 205, 167);
+//   }
+// }
 
-  .about-me {
-    position: relative;
-    display: inline-block;
-    top: 20px;
-    left: 20px;
-  }
-}
+// .bold {
+//   font-weight: bold;
+// }
 
-/* you can also define the transition style
-   on the base class as well (.repeat-item) */
-.video-item.ng-enter,
-.video-item.ng-leave {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
-}
+// iframe {
+//   //opacity: 0;
+// }
 
-.video-item.ng-enter,
-.video-item.ng-leave.ng-leave-active {
-  opacity:0;
-}
-.video-itemng-leave,
-.video-item.ng-enter.ng-enter-active {
-  opacity:1;
-}
+// .info {
+//   padding-top: 20px;
+//   padding-bottom: 20px;
+//   .img-container {
+//     display: inline-block;
+//     width: 100%;
 
-.video-container {
-  opacity: 0;
-}
+//     .img-me {
+//       border: 2px solid #50cf77;
+//       border-radius: 50%;
+//       width:100px;
+//       display: block;
+//       margin: 0 auto;
+//     }
+//   }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-  .info {
-    .img-container {
-      width: auto;
-      .img-me {
-        display: inline-block;
-      }
-    }
-  }
+//   .about-me {
+//     position: relative;
+//     display: inline-block;
+//     top: 20px;
+//     left: 20px;
+//   }
+// }
 
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}
+// /* you can also define the transition style
+//    on the base class as well (.repeat-item) */
+// .video-item.ng-enter,
+// .video-item.ng-leave {
+//   -webkit-transition:0.5s linear all;
+//   transition:0.5s linear all;
+// }
+
+// .video-item.ng-enter,
+// .video-item.ng-leave.ng-leave-active {
+//   opacity:0;
+// }
+// .video-itemng-leave,
+// .video-item.ng-enter.ng-enter-active {
+//   opacity:1;
+// }
+
+// .video-container {
+//   opacity: 0;
+// }
+
+// /* Responsive: Portrait tablets and up */
+// @media screen and (min-width: 768px) {
+//   .container {
+//     max-width: 730px;
+//   }
+//   .info {
+//     .img-container {
+//       width: auto;
+//       .img-me {
+//         display: inline-block;
+//       }
+//     }
+//   }
+
+//   /* Remove the padding we set earlier */
+//   .header,
+//   .marketing,
+//   .footer {
+//     padding-left: 0;
+//     padding-right: 0;
+//   }
+//   /* Space out the masthead */
+//   .header {
+//     margin-bottom: 30px;
+//   }
+//   /* Remove the bottom border on the jumbotron for visual effect */
+//   .jumbotron {
+//     border-bottom: 0;
+//   }
+// }
