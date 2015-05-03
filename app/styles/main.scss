@@ -5,18 +5,18 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "../bower_components/ionicons/scss/ionicons.scss";
 
-@import "variables.scss";
-@import "core.scss";
-@import "animation.scss";
+@import "variables";
+@import "core";
+@import "animation";
 
-@import "breakpoints/768px.scss";
+@import "breakpoints/768px";
 
-@import "pages/about.scss";
-@import "pages/home.scss";
+@import "pages/about";
+@import "pages/home";
 
-@import "partials/footer.scss";
-@import "partials/header.scss";
-@import "partials/pagination.scss";
-@import "partials/search.scss";
-@import "partials/svgloader.scss";
-@import "partials/tabs.scss";
+@import "partials/footer";
+@import "partials/header";
+@import "partials/pagination";
+@import "partials/search";
+@import "partials/svgloader";
+@import "partials/tabs";
