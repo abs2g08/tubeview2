@@ -16,7 +16,7 @@ angular.module('tubeview2App')
         templateUrl: 'views/video-detail.html',
         controller: 'VideoDetailCtrl',
         resolve: {
-          videoData: function($route, youtubeManager, svgLoaderManager) {
+          videoData: function($route, youtubeManager) {
             return youtubeManager.init().then(function() {
               return youtubeManager.get($route.current.params.video_id);
             });
@@ -25,7 +25,7 @@ angular.module('tubeview2App')
       });
   })
 
-  .controller('VideoDetailCtrl', function($scope, videoData, svgLoaderManager) {
+  .controller('VideoDetailCtrl', function($scope, videoData) {
     $scope.screenName = 'video-detail';
     $scope.videoData = videoData;
     $scope.videoLoaded = false;

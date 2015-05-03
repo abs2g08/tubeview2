@@ -19,7 +19,7 @@ angular.module('tubeview2App')
             return youtubeManager.init();
           }
         }
-      })
+      });
   })
 
   .controller('HomeCtrl', function($scope) {

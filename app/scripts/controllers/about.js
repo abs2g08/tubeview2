@@ -14,7 +14,7 @@ angular.module('tubeview2App')
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
+      });
   })
 
   .controller('AboutCtrl', function($scope) {

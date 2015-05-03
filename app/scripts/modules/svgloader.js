@@ -5,11 +5,11 @@ angular.module('svgLoader', [])
   .factory('svgLoaderManager', function ($rootScope) {
     var config = {};
 
-    config.start = function (key) {
+    config.start = function () {
       $rootScope.$broadcast('us-spinner:spin');
     };
 
-    config.stop = function (key) {
+    config.stop = function () {
       $rootScope.$broadcast('us-spinner:stop');
     };
 
