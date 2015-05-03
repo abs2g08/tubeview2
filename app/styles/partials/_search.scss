@@ -4,17 +4,17 @@
 
 .searchInput {
   &::-webkit-input-placeholder { /* WebKit browsers */
-      color: rgb(151, 205, 167);
+      color: $neon-green-color;
   }
   &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-     color: rgb(151, 205, 167);
+     color: $neon-green-color;
      opacity:  1;
   }
   &::-moz-placeholder { /* Mozilla Firefox 19+ */
-     color: rgb(151, 205, 167);
+     color: $neon-green-color;
      opacity:  1;
   }
   &:-ms-input-placeholder { /* Internet Explorer 10+ */
-     color: rgb(151, 205, 167);
+     color: $neon-green-color;
   }
 }
