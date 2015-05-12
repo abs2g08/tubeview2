@@ -9,7 +9,8 @@
  */
 angular.module('tubeview2App')
   .factory('searchManager', function(youtubeManager, resultsManager) {
-    var search = {
+
+    var searchManager = {
       query: '',
       noResultsQuery: '',
       noResults: false,
@@ -33,5 +34,5 @@ angular.module('tubeview2App')
       }
     };
 
-    return search;
+    return searchManager;
   });

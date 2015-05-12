@@ -18,6 +18,15 @@ var init = function() {
 angular.module('tubeview2App')
   .factory('youtubeManager', function(Youtube, GAPI, $window, $q) {
 
+    var defaults = {
+      q: '',
+      part: 'snippet',
+      maxResults: 10,
+      type: 'video'
+    };
+
+    var gapiFullyLoaded = false;
+
     var Result = function(queryParams, data, svgLoaderManager) {
       this.queryParams = queryParams;
       this.currentPageNum = 1;
@@ -37,16 +46,7 @@ angular.module('tubeview2App')
       }
     };
 
-    var defaults = {
-      q: '',
-      part: 'snippet',
-      maxResults: 10,
-      type: 'video'
-    };
-
-    var gapiFullyLoaded = false;
-
-    return {
+    var youtubeManager = {
 
       search: function(queryParams) {
         var params = angular.extend({}, defaults, queryParams);
@@ -86,4 +86,6 @@ angular.module('tubeview2App')
         });
       }
     };
+
+    return youtubeManager;
   });

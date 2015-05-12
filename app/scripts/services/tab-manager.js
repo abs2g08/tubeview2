@@ -9,8 +9,7 @@
  */
 angular.module('tubeview2App')
   .factory('tabManager', function() {
-
-    return {
+    var tabManager = {
       tabs: [],
       createTab: function(page) {
         page.active = true;
@@ -24,4 +23,6 @@ angular.module('tubeview2App')
         }
       }
     };
+
+    return tabManager;
   });

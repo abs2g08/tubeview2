@@ -21,8 +21,7 @@ angular.module('tubeview2App')
       });
     };
 
-    // Public API here
-    return {
+    var resultsManager = {
       pushResult: function(resultsObj) {
 
         var pagination = new PaginationManager({
@@ -42,4 +41,7 @@ angular.module('tubeview2App')
         tabManager.createTab(result);
       }
     };
+
+    // Public API here
+    return resultsManager;
   });
