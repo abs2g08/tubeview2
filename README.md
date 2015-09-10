@@ -4,7 +4,7 @@ Tubeview2 is a Youtube client written in Angular.js.
 
 ## Build & development
 
-Add Youtube API keys to config.js
+*Important* - Add your own Youtube API keys to config.js
 
 Run `grunt` for building and `grunt serve` for preview.
 
