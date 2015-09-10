@@ -7,8 +7,8 @@ angular.module('tubeview2App')
   })
 
   .value('GoogleApp', {
-      apiKey: '<api key>',
-      clientId: '<client key>',
+      apiKey: '<api key>', //NOTE: please add your very own google API key
+      clientId: '<client key>', // and client key
       scopes: [
         'https://www.googleapis.com/auth/youtube',
       ]
