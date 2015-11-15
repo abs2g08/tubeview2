@@ -16,11 +16,12 @@ angular.module('tubeview2App')
         this.tabs.push(page);
       },
       close: function(tab) {
-        for (var i = 0; i < this.tabs.length; i++) {
-          if (this.tabs[i].$$hashKey === tab.$$hashKey) {
-            this.tabs.splice(i, 1);
+        var _this = this;
+        this.tabs.forEach(function(currentTab, i) {
+          if (currentTab.$$hashKey === tab.$$hashKey) {
+            _this.tabs.splice(i, 1);
           }
-        }
+        });
       }
     };
 

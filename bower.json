@@ -14,7 +14,7 @@
     "angular-motion": "~0.3.4",
     "ngGAPI": "https://github.com/christiansmith/ngGAPI.git",
     "angular-bootstrap": "~0.12.1",
-    "ionicons": "~2.0.1",
+    "ionicons": "2.0.0",
     "angular-dialog-service": "~5.2.6",
     "angular-translate": "~2.6.1",
     "angular-youtube-mb": "~1.0.0",

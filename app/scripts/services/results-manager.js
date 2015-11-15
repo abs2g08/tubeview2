@@ -13,6 +13,7 @@ angular.module('tubeview2App')
     var youtubeAdapter = function(paginator, resultsObj, callback) {
       var diff = paginator.currentPageNum - paginator.maxPageReached;
       var origMaxResults = resultsObj.queryParams.maxResults;
+
       resultsObj.queryParams.maxResults = diff * origMaxResults;
 
       resultsObj.nextPage().then(function() {
