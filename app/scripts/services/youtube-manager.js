@@ -27,7 +27,7 @@ angular.module('tubeview2App')
 
     var gapiFullyLoaded = false;
 
-    var Result = function(queryParams, data, svgLoaderManager) {
+    var Result = function(queryParams, data) {
       this.queryParams = queryParams;
       this.currentPageNum = 1;
 
@@ -35,7 +35,7 @@ angular.module('tubeview2App')
     };
 
     Result.prototype = {
-      nextPage: function(maxResults) {
+      nextPage: function() {
         this.queryParams.pageToken = this.nextPageToken;
 
         var _this = this;
@@ -65,7 +65,7 @@ angular.module('tubeview2App')
       },
 
       init: function() {
-        return $q(function(resolve, reject) {
+        return $q(function(resolve) {
           if (gapiFullyLoaded) {
             resolve();
           }

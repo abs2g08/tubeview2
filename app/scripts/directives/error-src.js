@@ -16,5 +16,5 @@ angular.module('tubeview2App')
           }
         });
       }
-    }
+    };
   });

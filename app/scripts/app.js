@@ -23,6 +23,12 @@ angular
     'svgLoader',
     'youtube-embed'
   ])
-  .run(function(ErrorManager) {
+  .run(function(GoogleApp) {
+    if(GoogleApp.apiKey === '<api key>') {
+      throw 'Please set google API key in config.js';
+    }
 
+    if(GoogleApp.clientId === 'clientId') {
+      throw 'Please set clientId';
+    }
   });

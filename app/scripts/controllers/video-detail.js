@@ -12,13 +12,13 @@ angular.module('tubeview2App')
 
   .config(function($routeProvider) {
     $routeProvider
-      .when('/videos/:video_id', {
+      .when('/videos/:videoId', {
         templateUrl: 'views/video-detail.html',
         controller: 'VideoDetailCtrl',
         resolve: {
           videoData: function($route, youtubeManager) {
             return youtubeManager.init().then(function() {
-              return youtubeManager.get($route.current.params.video_id);
+              return youtubeManager.get($route.current.params.videoId);
             });
           }
         }
@@ -30,7 +30,7 @@ angular.module('tubeview2App')
     $scope.videoData = videoData;
     $scope.videoLoaded = false;
 
-    $scope.$on('youtube.player.ready', function($event, player) {
+    $scope.$on('youtube.player.ready', function() {
       $scope.videoLoaded = true;
     });
   });

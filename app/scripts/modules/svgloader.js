@@ -24,7 +24,7 @@ angular.module('svgLoader', [])
       scope: {
         overlay: '='
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope, element) {
 
         scope.start = function() {
           $(element).find('.spinner').fadeIn();
@@ -46,11 +46,11 @@ angular.module('svgLoader', [])
           }
         };
 
-        scope.$on('us-spinner:spin', function(event) {
+        scope.$on('us-spinner:spin', function() {
           scope.start();
         });
 
-        scope.$on('us-spinner:stop', function(event) {
+        scope.$on('us-spinner:stop', function() {
           scope.stop();
         });
       }
