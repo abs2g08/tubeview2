@@ -27,8 +27,10 @@ angular.module('svgLoader', [])
       link: function postLink(scope, element) {
 
         scope.start = function() {
-          $(element).find('.spinner').fadeIn();
-          $(element).find('.spinner').addClass('fly-up');
+          var spinner = $(element).find('.spinner');
+          spinner.fadeIn();
+          spinner.addClass('fly-up');
+
           if (scope.overlay) {
             var overlay = $(element).find('.overlay');
             overlay.show();
@@ -37,8 +39,10 @@ angular.module('svgLoader', [])
         };
 
         scope.stop = function() {
-          $(element).find('.spinner').hide();
-          $(element).find('.spinner').removeClass('fly-up');
+          var spinner = $(element).find('.spinner');
+          spinner.hide();
+          spinner.removeClass('fly-up');
+
           if (scope.overlay) {
             var overlay = $(element).find('.overlay');
             overlay.hide();
