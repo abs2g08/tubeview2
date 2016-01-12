@@ -1,3 +1,5 @@
+/* jshint ignore:start */
+
 /**
  * @ngdoc overview
  * @name ui.bootstrap.tabs
@@ -291,3 +293,5 @@ angular.module('ui.bootstrap.tabs', [])
 })
 
 ;
+
+/* jshint ignore:end */

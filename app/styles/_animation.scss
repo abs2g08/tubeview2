@@ -1,12 +1,39 @@
+@mixin transition-property($property...) {
+  -moz-transition-property:    $property;
+  -o-transition-property:      $property;
+  -webkit-transition-property: $property;
+  transition-property:         $property;
+}
+
+@mixin transition-duration($duration...) {
+  -moz-transition-property:    $duration;
+  -o-transition-property:      $duration;
+  -webkit-transition-property: $duration;
+  transition-property:         $duration;
+}
+
+@mixin animation-fill-mode($direction...) {
+  -webkit-animation-fill-mode: $direction;
+  -moz-animation-fill-mode:    $direction;
+  animation-fill-mode:         $direction;
+}
+
+@mixin animation-duration($duration...) {
+  -webkit-animation-duration:  $duration;
+  -moz-animation-duration:     $duration;
+  animation-duration:          $duration;
+}
+
+@mixin animation($property...) {
+  -webkit-animation:           $property;
+  -moz-animation:              $property;
+  animation:                   $property;
+}
+
 @mixin fade-in() {
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  @include transition-property(opacity);
+  @include transition-duration(0.5s);
+
   position: relative;
   top: 0px;
   left: 0px;
@@ -18,14 +45,9 @@
 }
 
 @mixin fade-out() {
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  @include transition-property(opacity);
+  @include transition-duration(0.5s);
+
   position: absolute;
   top: 0px;
   left: 0px;
@@ -41,18 +63,11 @@
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 .fade-in {
- opacity:0;  /* make things invisible upon start */
- -webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
- -moz-animation:fadeIn ease-in 1;
- animation:fadeIn ease-in 1;
+  opacity:0;
 
- -webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
- -moz-animation-fill-mode:forwards;
- animation-fill-mode:forwards;
-
- -webkit-animation-duration:1s;
- -moz-animation-duration:1s;
- animation-duration:1s;
+  @include animation(fadeIn ease-in 1);
+  @include animation-fill-mode(forwards);
+  @include animation-duration(1s);
 }
 
 .screen {
