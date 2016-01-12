@@ -10,7 +10,7 @@ Assumes you have node bower compass and grunt-cli installed
 
 * `npm install` (May produce warnings due to old project)
 * `bower install`
-* `grunt` for building and `grunt serve` for preview.
+* `npm build` for building and `npm start` for preview.
 
 ## Screenshot
 
