@@ -2,12 +2,20 @@
 
 Tubeview2 is a basic Youtube client written in Angular.js.
 
+## Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](http://git-scm.com/)
+* [Node.js@0.12.9](http://nodejs.org/)
+* [n](https://www.npmjs.com/package/n)
+* [grunt-cli](https://www.npmjs.com/package/grunt-cli)
+
 ## Running
 
-**Important** -> Add your own Youtube API keys to config.js
+Add your own Youtube API keys to config.js
 
-Assumes you have node bower compass and grunt-cli installed
-
+* `n 0.12.9` 
 * `npm install` (May produce warnings due to old project)
 * `bower install`
 * `npm build` for building and `npm start` for preview.
