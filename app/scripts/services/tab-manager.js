@@ -8,6 +8,7 @@
  * Service in the tubeview2App.
  */
 angular.module('tubeview2App')
+
   .factory('tabManager', function() {
     var tabManager = {
       tabs: [],

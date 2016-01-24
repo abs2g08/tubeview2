@@ -16,8 +16,8 @@ var init = function() {
  * Factory in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('youtubeManager', function(Youtube, GAPI, $window, $q) {
 
+  .factory('youtubeManager', function(Youtube, GAPI, $window, $q) {
     var defaults = {
       q: '',
       part: 'snippet',

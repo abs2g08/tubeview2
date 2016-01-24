@@ -8,8 +8,8 @@
  * Service in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('PaginationManager', function() {
 
+  .factory('PaginationManager', function() {
     var defaults = {
       currentPageNum: 1,
       currentPage: null,

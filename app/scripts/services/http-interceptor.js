@@ -8,8 +8,8 @@
  * Factory in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('httpInterceptor', function($q, $rootScope, svgLoaderManager) {
 
+  .factory('httpInterceptor', function($q, $rootScope, svgLoaderManager) {
     var numLoadings = 0;
 
     var httpProvider = {

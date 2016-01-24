@@ -8,8 +8,8 @@
  * Factory in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('resultsManager', function(tabManager, PaginationManager) {
 
+  .factory('resultsManager', function(tabManager, PaginationManager) {
     var youtubeAdapter = function(paginator, resultsObj, callback) {
       var diff = paginator.currentPageNum - paginator.maxPageReached;
       var origMaxResults = resultsObj.queryParams.maxResults;

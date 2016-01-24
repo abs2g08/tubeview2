@@ -8,8 +8,8 @@
  * Service in the tubeview2App.
  */
 angular.module('tubeview2App')
-  .factory('ErrorManager', function($rootScope, dialogs) {
 
+  .factory('ErrorManager', function($rootScope, dialogs) {
     var errorManager = {
       handleHttpError: function(event, resp) {
         var status = resp.status;
