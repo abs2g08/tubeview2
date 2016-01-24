@@ -7,6 +7,7 @@
  * # errorSrc
  */
 angular.module('tubeview2App')
+
   .directive('ngErrorsrc', function() {
     return {
       link: function(scope, element, attrs) {
