@@ -2,9 +2,24 @@
 
 Tubeview2 is a basic Youtube client written in Angular.js.
 
-## Prerequisites
+Currently it is possible to:
 
-You will need the following things properly installed on your computer.
+* Search for videos using query string
+* Paginate matching results
+* Create multiple tabs
+* Play videos
+
+## Features
+
+* Scafolded using [Yeoman](http://yeoman.io/)
+* Built using Angular.js
+* Sass/Compass integration
+* Custom Svg loader and css animations 
+* Multi Language support
+* Customized bootstrap theme
+* Bower/Node package management
+
+## Prerequisites
 
 * [Git](http://git-scm.com/)
 * [Node.js@0.12.9](http://nodejs.org/)
