@@ -14,9 +14,9 @@ Currently it is possible to:
 * Scafolded using [Yeoman](http://yeoman.io/)
 * Built using Angular.js
 * Sass/Compass integration
-* Custom Svg loader and css animations 
-* Multi Language support
-* Customized bootstrap theme
+* Custom SVG loader and CSS animations 
+* Multi-Language support
+* Customized Bootstrap theme
 * Bower/Node package management
 
 ## Prerequisites
