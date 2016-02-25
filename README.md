@@ -6,14 +6,14 @@ Currently it is possible to:
 
 * Search for videos using query string
 * Paginate matching results
-* Create multiple tabs
+* Create multiple tabs per search
 * Play videos
 
 ## Features
 
 * Scafolded using [Yeoman](http://yeoman.io/)
 * Built using Angular.js
-* Sass/Compass integration
+* SASS/Compass integration
 * Custom SVG loader and CSS animations 
 * Multi-Language support
 * Customized Bootstrap theme
