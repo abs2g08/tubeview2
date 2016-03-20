@@ -15,6 +15,7 @@ describe('Directive: errorSrc', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<error-src></error-src>');
     element = $compile(element)(scope);
+    debugger;
     expect(element.text()).toBe('this is the errorSrc directive');
   }));
 });

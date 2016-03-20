@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name tubeview2App.controller:TabsCtrl
+ * @name tubeview2App.controller:ResultsCtrl
  * @description
- * # TabsCtrl
+ * # ResultsCtrl
  * Controller of the tubeview2App
  */
 angular.module('tubeview2App')
