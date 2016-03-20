@@ -12,10 +12,15 @@ describe('Directive: errorSrc', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<error-src></error-src>');
-    element = $compile(element)(scope);
-    debugger;
-    expect(element.text()).toBe('this is the errorSrc directive');
-  }));
+  it('src attribute should fallback ng-errorsrc if remote image fails to load', function(done){
+    inject(function ($compile) {
+      element = angular.element('<img ng-src="/does/not/exist" ng-errorsrc="http://lorempixel.com/400/200/" />');
+      element = $compile(element)(scope);
+      scope.$digest();
+      setTimeout(function() {
+        expect(element[0].src).toBe('http://lorempixel.com/400/200/');
+        done();
+      }, 100);
+    });
+  });
 });

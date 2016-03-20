@@ -14,7 +14,7 @@ Currently it is possible to:
 * Scafolded using [Yeoman](http://yeoman.io/)
 * Built using Angular.js
 * SASS/Compass integration
-* Custom SVG loader and CSS animations 
+* Custom SVG loader and CSS animations
 * Multi-Language support
 * Customized Bootstrap theme
 * Bower/Node package management
@@ -30,7 +30,7 @@ Currently it is possible to:
 
 Add your own Youtube API keys to config.js
 
-* `n 0.12.9` 
+* `n 0.12.9`
 * `npm install` (May produce warnings due to old project)
 * `bower install`
 * `npm build` for building and `npm start` for preview.
