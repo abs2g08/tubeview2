@@ -17,6 +17,7 @@ describe('Directive: errorSrc', function () {
       element = angular.element('<img ng-src="/does/not/exist" ng-errorsrc="http://lorempixel.com/400/200/" />');
       element = $compile(element)(scope);
       scope.$digest();
+      
       setTimeout(function() {
         expect(element[0].src).toBe('http://lorempixel.com/400/200/');
         done();
