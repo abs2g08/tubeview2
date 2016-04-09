@@ -16,6 +16,7 @@ describe('Service: PaginationManager', function () {
     for(var i=frm; i<=to; i++) {
       res.push(i);
     }
+    
     return res;
   }
 

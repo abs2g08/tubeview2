@@ -16,22 +16,23 @@ angular.module('tubeview2App')
 
       resultsObj.queryParams.maxResults = diff * origMaxResults;
 
-      resultsObj.nextPage().then(function() {
-        resultsObj.queryParams.maxResults = origMaxResults;
-        callback(resultsObj.items);
-      });
+      resultsObj
+        .nextPage()
+        .then(function() {
+          resultsObj.queryParams.maxResults = origMaxResults;
+          callback(resultsObj.items);
+        });
     };
 
     var resultsManager = {
       pushResult: function(resultsObj) {
-
         var pagination = new PaginationManager({
-            pageLength: resultsObj.pageInfo.resultsPerPage,
-            totalItems: resultsObj.pageInfo.totalResults,
-            data: resultsObj.items,
-            ajax: function(paginator, callback) {
-              youtubeAdapter(paginator, resultsObj, callback);
-            }
+          pageLength: resultsObj.pageInfo.resultsPerPage,
+          totalItems: resultsObj.pageInfo.totalResults,
+          data: resultsObj.items,
+          ajax: function(paginator, callback) {
+            youtubeAdapter(paginator, resultsObj, callback);
+          }
         });
 
         var result = {

@@ -19,7 +19,12 @@ angular.module('svgLoader', [])
   .directive('loader', function() {
     return {
       template:
-        '<div class="loader-container"><div class="spinner" style="display:none;"><img src="bower_components/svg-loaders/svg-loaders/ball-triangle.svg" width="40" alt=""></div><div class="overlay" style="display:none;"></div></div>',
+        '<div class="loader-container">' +
+        '<div class="spinner" style="display:none;">' +
+        '<img src="bower_components/svg-loaders/' + 
+        'svg-loaders/ball-triangle.svg" width="40" alt="">' +
+        '</div><div class="overlay" style="display:none;">' +
+        '</div></div>',
       restrict: 'E',
       scope: {
         overlay: '='
